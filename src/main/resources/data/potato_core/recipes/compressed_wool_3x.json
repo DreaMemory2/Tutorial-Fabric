@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "potato_core:compressed_wool_2x"
+    }
+  },
+  "result": {
+    "item": "potato_core:compressed_wool_3x",
+    "count": 1
+  }
+}

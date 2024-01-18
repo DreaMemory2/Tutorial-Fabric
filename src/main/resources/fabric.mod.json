@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "potato_core",
+  "version": "1.0",
+
+  "name": "Potato Core",
+  "description": "This is a Potato Core Mod. It depicts some different something",
+  "authors": [
+    "Starlight"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/potato_core/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.starlight.potato_core.FirstMod"
+    ],
+    "client": [
+      "net.starlight.potato_core.FirstModClient"
+    ],
+    "fabric-datagen": [
+      "net.starlight.potato_core.FirstModDataGenerator"
+    ]
+  },
+  "mixins": [
+    "potato_core.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.11",
+    "fabric-api": "*",
+    "minecraft": "~1.19.3",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

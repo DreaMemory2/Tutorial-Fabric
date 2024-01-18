@@ -1,0 +1,12 @@
+{
+  "galaxy": {
+    "sounds": [
+      "potato_core:galaxy"
+    ]
+  },
+  "beautiful_chicken": {
+    "sounds": [
+      "potato_core:beautiful_chicken"
+    ]
+  }
+}

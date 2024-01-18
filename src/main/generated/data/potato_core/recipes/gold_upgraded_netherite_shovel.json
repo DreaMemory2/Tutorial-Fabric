@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "potato_core:gold_upgraded_netherite_ingot"
+    },
+    "i": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " a ",
+    " i ",
+    " i "
+  ],
+  "result": {
+    "item": "potato_core:gold_upgraded_netherite_shovel"
+  }
+}

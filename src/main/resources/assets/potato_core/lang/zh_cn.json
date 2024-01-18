@@ -1,0 +1,32 @@
+{
+  "block.potato_core.compressed_wool_1x": "1重压缩毛巾",
+  "block.potato_core.compressed_wool_2x": "2重压缩毛巾",
+  "block.potato_core.compressed_wool_3x": "3重压缩毛巾",
+  "block.potato_core.compressed_wool_4x": "4重压缩毛巾",
+  "block.potato_core.compressed_wool_5x": "5重压缩毛巾",
+  "block.potato_core.compressed_wool_6x": "6重压缩毛巾",
+  "block.potato_core.compressed_wool_7x": "7重压缩毛巾",
+  "block.potato_core.compressed_wool_8x": "8重压缩毛巾",
+  "block.potato_core.compressed_wool_9x": "§c9重压缩毛巾",
+
+  "block.potato_core.corn_crop": "玉米种子",
+  "block.potato_core.iron_log": "铁原木",
+  "block.potato_core.iron_leaves": "铁树叶",
+  "block.potato_core.iron_sapling": "铁树苗",
+
+  "item.potato_core.chicken_soup": "鸡汤",
+  "item.potato_core.galaxy_item.desc": "Galaxy-2023",
+  "item.potato_core.galaxy_item": "Galaxy唱片",
+  "item.potato_core.music_card": "音乐卡片",
+  "item.potato_core.rap_basketball": "唱Rap篮球",
+  "item.potato_core.small_black": "小黑子",
+  "item.potato_core.kun_book": "Kun的书",
+  "item.potato_core.colors_black": "五彩斑斓的黑",
+  "item.potato_core.paradise_water_bucket": "桶装温泉水",
+  "item.potato_core.corn": "玉米",
+  "item.potato_core.flame_flint": "烈焰打火石",
+
+  "itemGroup.potato_core.potato_item": "土豆核心的物品组",
+  "itemGroup.potato_core.potato_block": "土豆核心的方块组",
+  "itemGroup.potato_core.potato_building": "建筑方块"
+}
