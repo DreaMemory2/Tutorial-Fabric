@@ -6,6 +6,7 @@ import net.starlight.potato_core.register.ModBlocks;
 import net.starlight.potato_core.register.*;
 import net.starlight.potato_core.screen.ModScreenHandlers;
 import net.starlight.potato_core.sound.Sounds;
+import net.starlight.potato_core.register.ModRegister;
 import net.starlight.potato_core.world.feature.TreeConfiguredFeatures;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +33,9 @@ public class FirstMod implements ModInitializer {
 		TreeConfiguredFeatures.registerTree();
 
 		ModPortal.registerPortal();
+
+		// Other Register
+		ModRegister.registerBlockColor();
 	}
 
 	/**

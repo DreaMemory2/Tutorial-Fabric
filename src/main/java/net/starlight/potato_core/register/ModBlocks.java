@@ -38,6 +38,8 @@ public class ModBlocks {
     public static final Block IRON_LEAVES = registerBlock("iron_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)), ModItemGroup.BUILDING);
     // Sapling 铁树苗
     public static final Block IRON_SAPLING = registerBlock("iron_sapling", new SaplingBlock(new IronSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), ModItemGroup.ITEMS);
+    // 实现石头群系渲染效果
+    public static final Block STONE = registerBlock("stone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)), ModItemGroup.BLOCKS);
 
     public static Block registerBlock(String name, Block block, ItemGroup tab){
         registerBlockItem(name, block, tab);

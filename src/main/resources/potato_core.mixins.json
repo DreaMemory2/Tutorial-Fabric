@@ -4,9 +4,11 @@
   "package": "net.starlight.potato_core.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "EnchantmentHelperMixin"
+    "EnchantmentHelperMixin",
+    "InfiniteItemMixin"
   ],
   "client": [
+    "ColorRegister",
     "InGameHudMinxin",
     "KeyboardMixin",
     "MinecraftClientMixin",
