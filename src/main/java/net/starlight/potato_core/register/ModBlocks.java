@@ -38,8 +38,17 @@ public class ModBlocks {
     public static final Block IRON_LEAVES = registerBlock("iron_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)), ModItemGroup.BUILDING);
     // Sapling 铁树苗
     public static final Block IRON_SAPLING = registerBlock("iron_sapling", new SaplingBlock(new IronSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), ModItemGroup.ITEMS);
-    // 实现石头群系渲染效果
+    // 实现石头在不同群系中的颜色渲染效果，跟随生态群系的主要颜色变化而变化
     public static final Block STONE = registerBlock("stone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)), ModItemGroup.BLOCKS);
+    // 添加白色木板
+    public static final Block WHITE_PLANKS = registerBlock("white_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)), ModItemGroup.BLOCKS);
+    /**
+     * <p>添加白色木板楼梯</p>
+     * <p>实现{@link StairsBlock}楼梯方块的类，并且提供方块状态和方块属性。其中方块默认状态是白色木板，方块属性复制橡木楼梯的属性的值</p>
+     * <p>在资源文件中配置相关方块状态，在models/block文件夹下配置stairs_inner，stairs_outer和stairs材质</p>
+     * <p>在models/item文件夹下配置stairs文件<，物品栏上方块显示材质样式；最后在loot_tables添加掉落物</p>
+     */
+    public static final Block WHITE_PLANK_STAIRS = registerBlock("white_plank_stairs", new StairsBlock(ModBlocks.WHITE_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_STAIRS)), ModItemGroup.BLOCKS);
 
     public static Block registerBlock(String name, Block block, ItemGroup tab){
         registerBlockItem(name, block, tab);

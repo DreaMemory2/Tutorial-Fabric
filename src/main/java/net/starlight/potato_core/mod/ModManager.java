@@ -6,11 +6,15 @@ import java.util.stream.Collectors;
 
 /**
  * <p>将模块全部放入列表里</p>
+ * @author Stalight
+ * @since 1.0
  */
 public class ModManager {
+    /** 模块列表 */
     private final List<Mod> mods = new ArrayList<>();
 
     public void load() {
+        // 添加模块
         mods.add(new Logo());
     }
 

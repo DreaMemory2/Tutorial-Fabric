@@ -27,7 +27,7 @@ dependencies {
 	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta63-1.19.3'
 	include 'net.kyrptonaught:customportalapi:0.0.1-beta63-1.19.3'
 
-	modImplementation('maven.modrinth:sodium:mc1.19.3-0.4.9') { exclude group: "net.fabricmc.fabric-api" }
+	modImplementation('maven.modrinth:sodium:mc1.19.3-0.4.5') { exclude group: "net.fabricmc.fabric-api" }
 }
 
 processResources {

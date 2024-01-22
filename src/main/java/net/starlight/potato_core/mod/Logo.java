@@ -7,17 +7,23 @@ import org.lwjgl.glfw.GLFW;
 
 /**
  * <p>创建一个log模块类继承创建好的模块</p>
+ * @author Stalight
+ * @since 1.0
  */
 public class Logo extends Mod{
+    /**
+     * <p>填完模块信息后，添加到ModManager类中</p>
+     */
     public Logo() {
         super("Logo", Category.DRAW);
         // 在模块的构造方法中调用setKey方法来设置按键的代码
-        // 按键代码可以调用GLFW获取
+        // 按键代码可以调用GLFW获取，按键为M
         this.setKey(GLFW.GLFW_KEY_M);
     }
 
     /**
-     * <p>重新draw方法</p>
+     * <p>draw方法：绘制窗口内右上角文字的方法</p>
+     * <p>在注入的matrices中获取到所有已经启用的模块，调用每个模块中的主要方法</p>
      */
     @Override
     public void draw(MatrixStack matrices) {
@@ -28,14 +34,17 @@ public class Logo extends Mod{
     }
 
     /**
-     * <p>重新enable和disable方法</p>
-     * <p>模块启用或禁用时打印日志</p>
+     * <p>启用enable方法</p>
+     * <p>模块启用时打印日志</p>
      */
     @Override
     public void enable() {
         FirstMod.LOGGER.info("Logo Enable");
     }
-
+    /**
+     * <p>禁用disable方法</p>
+     * <p>禁止使用时打印日志</p>
+     */
     @Override
     public void disable() {
         FirstMod.LOGGER.info("Logo Disable");

@@ -90,8 +90,4 @@ public class TreeConfiguredFeatures {
     public static RegistryKey<ConfiguredFeature<?, ?>> registry(String id) {
         return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(FirstMod.MOD_ID, id));
     }
-
-    public static void registerTree() {
-        FirstMod.LOGGER.debug("Register Tree for" + FirstMod.MOD_ID);
-    }
 }
