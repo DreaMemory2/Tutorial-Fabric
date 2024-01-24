@@ -1,6 +1,10 @@
 package net.starlight.potato_core.util;
 
-public enum MyColor implements ILocalizationEnum {
+import net.starlight.potato_core.ident.Result;
+import net.starlight.potato_core.ident.Test;
+
+@Test(Result.USELESS)
+public enum AEColor {
     WHITE("白色", "white", 0xDBDBDB),
     ORANGE("橙色","orange",0xFAAE44),
     MAGENTA("品红色", "magenta",0xB82AB8),
@@ -16,28 +20,22 @@ public enum MyColor implements ILocalizationEnum {
     BROWN("褐色", "brown", 0xB7967F),
     GREEN("绿色", "green", 0x60E32E),
     RED("红色", "red", 0xFF003C),
-    BLACK("黑色", "black", 0x565656),
-    FLUIX("Fluix色", "fluix", 0x895CA8);
-
+    BLACK("黑色", "black", 0x565656);
     public final String id;
-    public final int rgbNormal;
-    public final String defaultName;
-    public final String translationKey;
+    public final int rgb;
+    public final String name;
+    public final String key;
 
-    MyColor(String defaultName, String id, int rgbNormal) {
+    /**
+     * @param name 颜色名称
+     * @param id 颜色英文id
+     * @param rgb RGB颜色
+     */
+    AEColor(String name, String id, int rgb) {
         this.id = id;
-        this.rgbNormal = rgbNormal;
-        this.defaultName = defaultName;
-        this.translationKey = "color.ae2." + id;
-    }
-
-    @Override
-    public String defaultName() {
-        return defaultName;
-    }
-
-    @Override
-    public String translationKey() {
-        return translationKey;
+        this.rgb = rgb;
+        this.name = name;
+        // 颜色Key?
+        this.key = "color.ae2." + id;
     }
 }

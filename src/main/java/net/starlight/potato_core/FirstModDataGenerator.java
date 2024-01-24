@@ -13,15 +13,17 @@ import net.starlight.potato_core.world.feature.TreePlacedFeatures;
 public class FirstModDataGenerator implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
+        // 废弃
+        /*
         // 动态生成Json文件
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
-        // 废弃
-        /*pack.addProvider(ModModelGenerator::new);
+        pack.addProvider(ModModelGenerator::new);
         pack.addProvider(ModLanguageGenerator::new);
         pack.addProvider(ModBlockTagGeneration::new);
         pack.addProvider(ModWorldGenerator::new);
         pack.addProvider(ModRecipeGenerator::new);
-        pack.addProvider(ModFluidTagGeneration::new);*/
+        pack.addProvider(ModFluidTagGeneration::new);
+        */
     }
 
     @Override

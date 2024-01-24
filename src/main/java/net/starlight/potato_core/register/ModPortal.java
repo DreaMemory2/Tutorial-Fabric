@@ -4,7 +4,10 @@ import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.util.Identifier;
+import net.starlight.potato_core.ident.Result;
+import net.starlight.potato_core.ident.Test;
 
+@Test(Result.SUCCESS)
 public class ModPortal {
     public static void registerPortal() {
         CustomPortalBuilder.beginPortal()

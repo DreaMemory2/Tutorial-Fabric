@@ -1,14 +1,17 @@
 package net.starlight.potato_core.item.entity;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.Direction;
-import net.starlight.potato_core.api.ContainerHelper;
+import net.starlight.potato_core.ident.Result;
+import net.starlight.potato_core.ident.Test;
 import org.jetbrains.annotations.Nullable;
 
+@Test(Result.SUCCESS)
 public class KunBookEntity implements SidedInventory {
     private final ItemStack stack;
     private final DefaultedList<ItemStack> items = DefaultedList.ofSize(0, ItemStack.EMPTY);
@@ -17,7 +20,7 @@ public class KunBookEntity implements SidedInventory {
         this.stack = stack;
         NbtCompound tag = stack.getSubNbt("Items");
         if(tag != null){
-            ContainerHelper.loadAllItems(tag, items);
+            Inventories.readNbt(tag, items);
         }
     }
 
@@ -73,12 +76,12 @@ public class KunBookEntity implements SidedInventory {
     @Override
     public ItemStack removeStack(int slot, int amount) {
         // if(!result.isEmpty()) {...}
-        return ContainerHelper.removeItem(getItems(), slot, amount);
+        return Inventories.splitStack(getItems(), slot, amount);
     }
 
     @Override
     public ItemStack removeStack(int slot) {
-        return ContainerHelper.takeItem(getItems(), slot);
+        return Inventories.removeStack(getItems(), slot);
     }
 
     @Override
@@ -92,7 +95,7 @@ public class KunBookEntity implements SidedInventory {
     @Override
     public void markDirty() {
         NbtCompound tag = stack.getOrCreateSubNbt("Items");
-        ContainerHelper.saveAllItems(tag, items);
+        Inventories.writeNbt(tag, items);
     }
 
     @Override

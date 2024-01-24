@@ -5,19 +5,19 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
-import net.starlight.potato_core.api.Result;
-import net.starlight.potato_core.api.Test;
+import net.starlight.potato_core.ident.Result;
+import net.starlight.potato_core.ident.Test;
 import net.starlight.potato_core.mod.Mod;
-import net.starlight.potato_core.util.MyColor;
+import net.starlight.potato_core.util.AEColor;
 
 /**
- * <p>每个染色物品都拥有不同的id, 所以需要根据颜色和是否发光</p>
- * <p>来获取每个染色球的资源路径，</p>
+ * <p>染色球</p>
+ * <p>每个染色物品都拥有不同的id, 所以需要根据颜色和是否发光，来获取每个染色球的资源路径。</p>
  */
 @Test(Result.FAIL)
-public class PaintBallItemDefinition extends ItemDefinition<Item> {
+public class PaintBallItemDefinition extends ItemDefinition {
     public final boolean isLight;
-    public final MyColor color;
+    public final AEColor color;
 
 
     /**
@@ -25,13 +25,13 @@ public class PaintBallItemDefinition extends ItemDefinition<Item> {
      * @param isLight 是否发光
      * @param color 颜色
      */
-    private PaintBallItemDefinition(String name, boolean isLight, MyColor color) {
+    private PaintBallItemDefinition(String name, boolean isLight, AEColor color) {
         super(getLoc(isLight, color), name, new Item(new Item.Settings()));
         this.isLight = isLight;
         this.color = color;
     }
 
-    private static Identifier getLoc(boolean isLight, MyColor color) {
+    private static Identifier getLoc(boolean isLight, AEColor color) {
         String name = color.name();
         if (isLight) name += "_lumen";
         name += "_paint_ball";
@@ -41,7 +41,6 @@ public class PaintBallItemDefinition extends ItemDefinition<Item> {
     /**
      * <p>注册滤镜</p>
      */
-    @Override
     @Environment(EnvType.CLIENT)
     public void ClientRegister() {
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> calculateColor(), this);
@@ -51,7 +50,7 @@ public class PaintBallItemDefinition extends ItemDefinition<Item> {
      * <p>计算滤镜的颜色</p>
      */
     private int calculateColor() {
-        int rgb = color.rgbNormal;
+        int rgb = color.rgb;
         if(this.isLight) {
             int r = rgb >> 16 & 0xff;
             int g = rgb >> 8 & 0xff;
@@ -67,12 +66,12 @@ public class PaintBallItemDefinition extends ItemDefinition<Item> {
     }
 
     @Override
-    protected void provideModel() {
+    public void provideData() {
 
     }
 
     @Override
     protected String getDefaultName() {
-        return color.defaultName + this.defaultName;
+        return color.name + this.defaultName;
     }
 }

@@ -3,36 +3,48 @@ package net.starlight.potato_core.item;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.util.Identifier;
+import net.starlight.potato_core.ident.IRegistry;
+import net.starlight.potato_core.ident.Result;
+import net.starlight.potato_core.ident.Test;
 
-public class ItemDefinition<I extends Item> implements ItemConvertible {
+/**
+ * <p>模组物品容器，负责物品的各种注册、数据生成和其他操作</p>
+ */
+@Test(Result.FAIL)
+public class ItemDefinition implements ItemConvertible, IRegistry {
     private final Identifier id;
+    public Item item;
 
     public String defaultName;
 
-    public ItemDefinition(Identifier id, String name, I item) {
+    /**
+     *
+     * @param id ID
+     * @param name name
+     * @param item 物品
+     */
+    public ItemDefinition(Identifier id, String name, Item item) {
         this.id = id;
-    }
-
-    public void ClientRegister() {
-
     }
 
     /**
      * 数据生成环境下的物品模型注册逻辑
      */
-    protected void provideModel() {
-
-        /*DataProviders.MODEL_ITEM.model(loc)
-                .parent("minecraft:item/generated")
-                .texture("layer0", loc);*/
+    @Override
+    public void provideData() {
+        IRegistry.super.provideData();
     }
+
 
     protected String getDefaultName() {
         return defaultName;
     }
 
+    /**
+     * 以物品形式获取Object对象
+     */
     @Override
     public Item asItem() {
-        return null;
+        return item;
     }
 }

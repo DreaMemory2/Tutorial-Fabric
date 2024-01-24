@@ -1,7 +1,6 @@
 package net.starlight.potato_core.recipe;
 
 import net.minecraft.inventory.CraftingInventory;
-import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.Recipe;
@@ -10,11 +9,14 @@ import net.minecraft.recipe.RecipeType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
+import net.starlight.potato_core.ident.Result;
+import net.starlight.potato_core.ident.Test;
 
 /**
  * <p>自定义合成表</p>
  * <p>{@link CraftingInventory 处理合成界面九宫格上的物品的类}</p>
  */
+@Test(Result.USELESS)
 public class BirchCraftingTableRecipe implements Recipe<CraftingInventory> {
     private final Identifier id;
     private final ItemStack output;

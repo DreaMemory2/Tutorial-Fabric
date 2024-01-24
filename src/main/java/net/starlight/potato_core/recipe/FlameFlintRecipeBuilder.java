@@ -5,8 +5,8 @@ import net.minecraft.block.Block;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
-import net.starlight.potato_core.api.Result;
-import net.starlight.potato_core.api.Test;
+import net.starlight.potato_core.ident.Result;
+import net.starlight.potato_core.ident.Test;
 
 import java.util.Arrays;
 import java.util.List;

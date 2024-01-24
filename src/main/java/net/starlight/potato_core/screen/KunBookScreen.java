@@ -1,6 +1,7 @@
 package net.starlight.potato_core.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.Keyboard;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
@@ -11,7 +12,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.starlight.potato_core.FirstMod;
 import net.starlight.potato_core.screen.handler.KunBookScreenHandler;
-import net.starlight.potato_core.api.KeyboardClass;
 
 /**
  * Forge与Fabric的关系
@@ -84,12 +84,14 @@ public class KunBookScreen extends HandledScreen<KunBookScreenHandler> {
     @Override
     public void close() {
         super.close();
-        new KeyboardClass(this.client).setSendRepeatsToGui(false);
+        new Keyboard(this.client);
+        // new KeyboardClass(this.client).setSendRepeatsToGui(false);
     }
 
     @Override
     public void init() {
         super.init();
-        new KeyboardClass(this.client).setSendRepeatsToGui(true);
+        new Keyboard(this.client);
+        // new KeyboardClass(this.client).setSendRepeatsToGui(true);
     }
 }

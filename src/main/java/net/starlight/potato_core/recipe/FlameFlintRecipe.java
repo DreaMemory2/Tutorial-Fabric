@@ -11,8 +11,8 @@ import net.minecraft.recipe.RecipeType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.starlight.potato_core.api.Result;
-import net.starlight.potato_core.api.Test;
+import net.starlight.potato_core.ident.Result;
+import net.starlight.potato_core.ident.Test;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;

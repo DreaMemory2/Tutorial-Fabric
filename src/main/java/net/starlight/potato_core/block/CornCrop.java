@@ -10,8 +10,11 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.starlight.potato_core.ident.Result;
+import net.starlight.potato_core.ident.Test;
 import net.starlight.potato_core.register.ModItems;
 
+@Test(Result.FAIL)
 public class CornCrop extends CropBlock {
     public static final IntProperty AGE = IntProperty.of("age", 0, 3);
     private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{

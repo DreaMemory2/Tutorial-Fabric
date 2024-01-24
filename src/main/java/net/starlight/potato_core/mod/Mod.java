@@ -3,6 +3,8 @@ package net.starlight.potato_core.mod;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.starlight.potato_core.FirstMod;
+import net.starlight.potato_core.ident.Result;
+import net.starlight.potato_core.ident.Test;
 
 /**
  * <p>将客户端的模块进行统一管理，让所以的模块继承父类，之后将所有的模块添加到列表中</p>

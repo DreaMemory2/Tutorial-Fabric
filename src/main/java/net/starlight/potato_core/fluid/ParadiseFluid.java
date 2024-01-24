@@ -15,8 +15,11 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
+import net.starlight.potato_core.ident.Result;
+import net.starlight.potato_core.ident.Test;
 import net.starlight.potato_core.register.ModFluids;
 
+@Test(Result.SUCCESS)
 public class ParadiseFluid extends FlowableFluid {
     @Override
     public Fluid getFlowing() {

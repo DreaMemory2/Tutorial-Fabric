@@ -17,10 +17,10 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
-import net.starlight.potato_core.api.Result;
-import net.starlight.potato_core.api.Test;
+import net.starlight.potato_core.ident.Result;
+import net.starlight.potato_core.ident.Test;
 
-@Test(Result.SUCCESS)
+@Test(Result.USELESS)
 public class FlameFlintItem extends Item {
 
     private static String CUR_POWER_NBT = "curPower";
