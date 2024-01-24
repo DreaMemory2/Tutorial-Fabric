@@ -66,11 +66,6 @@ public class PaintBallItemDefinition extends ItemDefinition {
     }
 
     @Override
-    public void provideData() {
-
-    }
-
-    @Override
     protected String getDefaultName() {
         return color.name + this.defaultName;
     }

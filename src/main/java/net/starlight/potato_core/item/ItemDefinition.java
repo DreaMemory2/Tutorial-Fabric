@@ -3,7 +3,6 @@ package net.starlight.potato_core.item;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.util.Identifier;
-import net.starlight.potato_core.ident.IRegistry;
 import net.starlight.potato_core.ident.Result;
 import net.starlight.potato_core.ident.Test;
 
@@ -11,7 +10,7 @@ import net.starlight.potato_core.ident.Test;
  * <p>模组物品容器，负责物品的各种注册、数据生成和其他操作</p>
  */
 @Test(Result.FAIL)
-public class ItemDefinition implements ItemConvertible, IRegistry {
+public class ItemDefinition implements ItemConvertible {
     private final Identifier id;
     public Item item;
 
@@ -26,15 +25,6 @@ public class ItemDefinition implements ItemConvertible, IRegistry {
     public ItemDefinition(Identifier id, String name, Item item) {
         this.id = id;
     }
-
-    /**
-     * 数据生成环境下的物品模型注册逻辑
-     */
-    @Override
-    public void provideData() {
-        IRegistry.super.provideData();
-    }
-
 
     protected String getDefaultName() {
         return defaultName;
