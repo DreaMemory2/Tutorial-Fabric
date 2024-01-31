@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.starlight.potato_core.mod.ModManager;
 import net.starlight.potato_core.register.ModBlocks;
 import net.starlight.potato_core.register.*;
-import net.starlight.potato_core.screen.ModScreenHandlers;
+import net.starlight.potato_core.register.ModScreenHandlers;
 import net.starlight.potato_core.sound.Sounds;
 import net.starlight.potato_core.register.ModRegister;
 import org.slf4j.Logger;
@@ -32,10 +32,14 @@ public class FirstMod implements ModInitializer {
 		Sounds.registerSounds();
 		/* 传送门登记口 */
 		ModPortal.registerPortal();
+		/* 配方登记口 */
+		ModRecipe.registerRecipes();
 
 		// Other Register
 		/* 方块在生态群系中渲染颜色的登记处 */
 		ModRegister.registerBlockColor();
+		/* 方块实体的登记处 */
+		ModBlockEntities.registerBlockEntities();
 	}
 
 	/**

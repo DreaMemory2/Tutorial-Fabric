@@ -9,11 +9,18 @@ import net.starlight.potato_core.ident.Test;
 
 @Test(Result.SUCCESS)
 public class ModPortal {
+    /**
+     * 注册传送门登记处
+     */
     public static void registerPortal() {
         CustomPortalBuilder.beginPortal()
-                .frameBlock(Blocks.GOLD_BLOCK)
+                // 传送门框架方块：雪块
+                .frameBlock(Blocks.SNOW_BLOCK)
+                // 启动传送门的液体
                 .lightWithFluid(Fluids.WATER)
+                // 传送维度
                 .destDimID(new Identifier("the_nether"))
+                // 传送门方块的颜色
                 .tintColor(234, 183,8)
                 .registerPortal();
     }

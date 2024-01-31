@@ -8,13 +8,13 @@ import net.minecraft.block.AbstractBlock.Settings;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.starlight.potato_core.FirstMod;
 import net.starlight.potato_core.block.CornCrop;
+import net.starlight.potato_core.block.DrinkMachineBlock;
 import net.starlight.potato_core.block.IronSaplingGenerator;
 import net.starlight.potato_core.block.NineCompressedWool;
 
@@ -49,6 +49,10 @@ public class ModBlocks {
      * <p>在models/item文件夹下配置stairs文件<，物品栏上方块显示材质样式；最后在loot_tables添加掉落物</p>
      */
     public static final Block WHITE_PLANK_STAIRS = registerBlock("white_plank_stairs", new StairsBlock(ModBlocks.WHITE_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_STAIRS)), ModItemGroup.BLOCKS);
+    /**
+     * <p>饮料机，自定义方块信息界面，自定义配方</p>
+     */
+    public static final Block DRINK_MACHINE = registerBlock("drink_machine",new DrinkMachineBlock(FabricBlockSettings.of(Material.METAL)), ModItemGroup.BLOCKS);
 
     public static Block registerBlock(String name, Block block, ItemGroup tab){
         registerBlockItem(name, block, tab);
