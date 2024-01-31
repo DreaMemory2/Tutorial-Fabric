@@ -67,9 +67,10 @@ public class DrinkMachineEntity extends BlockEntity implements SidedInventory, N
     /**
      * <p>根据物品的列表创建一个Inventory</p>
      *
-     * @param it
-     public boolean fits(int var1, int var2);
-     public static DefaultedList<ItemStack> of(DefaultedList<ItemStack> items) {
+     * @param items 物品列表
+     * @return 新的Inventory
+     */
+    public static DefaultedList<ItemStack> of(DefaultedList<ItemStack> items) {
         return items;
     }
 
