@@ -19,7 +19,7 @@ public class ModScreenHandlers {
     // KunBookScreenHandler.ExtendedFactory factory = (syncId, inventory, buf) -> new KunBookScreenHandler(syncId, inventory, buf);
     // 方法二(精简方式):
     public static final ScreenHandlerType<KunBookScreenHandler> KUN_SCREEN_HANDLER = new ExtendedScreenHandlerType<>(KunBookScreenHandler::new);
-    public static ScreenHandlerType<DrinkMachineScreenHandler> DRINK_MACHINE_SCREEN_HANDLER = new ScreenHandlerType<>(DrinkMachineScreenHandler::new);
+    public static ScreenHandlerType<DrinkMachineScreenHandler> DRINK_MACHINE_SCREEN_HANDLER = new ExtendedScreenHandlerType<>(DrinkMachineScreenHandler::new);
 
     public static void registerAllScreenHandles() {
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(FirstMod.MOD_ID, "kun_book_screen"),

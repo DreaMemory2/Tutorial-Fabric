@@ -7,7 +7,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import net.starlight.potato_core.sound.Sounds;
+import net.starlight.potato_core.register.ModSounds;
 
 public class RapBasketball extends Item {
     public RapBasketball(Settings settings) {
@@ -17,7 +17,7 @@ public class RapBasketball extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
-        world.playSound(null, user.getX(), user.getY(), user.getZ(), Sounds.BEAUTIFUL_CHICKEN, SoundCategory.NEUTRAL, 1.0F, 1.0F);
+        world.playSound(null, user.getX(), user.getY(), user.getZ(), ModSounds.BEAUTIFUL_CHICKEN, SoundCategory.NEUTRAL, 1.0F, 1.0F);
         user.getItemCooldownManager().set(this, 480);
         return TypedActionResult.success(itemStack, world.isClient());
     }

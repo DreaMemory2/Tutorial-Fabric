@@ -5,7 +5,7 @@ import net.starlight.potato_core.mod.ModManager;
 import net.starlight.potato_core.register.ModBlocks;
 import net.starlight.potato_core.register.*;
 import net.starlight.potato_core.register.ModScreenHandlers;
-import net.starlight.potato_core.sound.Sounds;
+import net.starlight.potato_core.register.ModSounds;
 import net.starlight.potato_core.register.ModRegister;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +29,7 @@ public class FirstMod implements ModInitializer {
 		ModFluids.registerFluids();
 		ModBiome.registerBiome();
 		/* 声音登记口 */
-		Sounds.registerSounds();
+		ModSounds.registerSounds();
 		/* 传送门登记口 */
 		ModPortal.registerPortal();
 		/* 配方登记口 */
@@ -40,6 +40,8 @@ public class FirstMod implements ModInitializer {
 		ModRegister.registerBlockColor();
 		/* 方块实体的登记处 */
 		ModBlockEntities.registerBlockEntities();
+		/* S2C发包注册口 */
+		ModMessages.registerS2CPackets();
 	}
 
 	/**

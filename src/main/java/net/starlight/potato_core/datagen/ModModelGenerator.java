@@ -9,7 +9,7 @@ import net.starlight.potato_core.block.CornCrop;
 import net.starlight.potato_core.register.ModBlocks;
 import net.starlight.potato_core.register.ModFluids;
 import net.starlight.potato_core.register.ModItems;
-import net.starlight.potato_core.sound.Sounds;
+import net.starlight.potato_core.register.ModSounds;
 
 public class ModModelGenerator extends FabricModelProvider {
 
@@ -63,7 +63,7 @@ public class ModModelGenerator extends FabricModelProvider {
         // 其他物品
         itemModelGenerator.register(ModItems.FLAME_FLINT, Models.GENERATED);
         // other
-        itemModelGenerator.register(Sounds.GALAXY_ITEM, Models.GENERATED);
+        itemModelGenerator.register(ModSounds.GALAXY_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModFluids.PAREDISE_WATER_BUCKET, Models.GENERATED);
     }
 }

@@ -1,5 +1,6 @@
 package net.starlight.potato_core.block;
 
+import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
@@ -58,7 +59,7 @@ public class DrinkMachineBlock extends BlockWithEntity implements BlockEntityPro
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
-            NamedScreenHandlerFactory screenHandlerFactory = (DrinkMachineEntity) world.getBlockEntity(pos);
+            ExtendedScreenHandlerFactory screenHandlerFactory = (DrinkMachineEntity) world.getBlockEntity(pos);
             // 打开GUI
             if (screenHandlerFactory != null) {
                 player.openHandledScreen(screenHandlerFactory);

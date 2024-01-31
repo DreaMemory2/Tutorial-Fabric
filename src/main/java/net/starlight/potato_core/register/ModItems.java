@@ -13,8 +13,6 @@ import net.starlight.potato_core.FirstMod;
 import net.starlight.potato_core.armor.NetherArmorMeterial;
 import net.starlight.potato_core.item.*;
 import net.starlight.potato_core.item.tool.*;
-import net.starlight.potato_core.sound.Sounds;
-import net.starlight.potato_core.tool.NetherToolMeterial;
 
 /**
  * Chicken soup 鸡汤[使用后的效果：中毒V 00:10 反胃II 00:10]
@@ -58,6 +56,7 @@ public class ModItems {
     public static final Item GOLD_NETHERITE_HOE = registerItem("gold_upgraded_netherite_hoe", new GolderiteHoe(
             -4, 0.0f, new FabricItemSettings()));
     public static final Item FLAME_FLINT = registerItem("flame_flint", new FlameFlintItem(new FabricItemSettings()));
+    public static final Item APPLE_JUICE = registerItem("apple_juice", new Item(new FabricItemSettings()));
 
     public static void addItems() {
         addItemGroup(CHICKEN_SOUP);
@@ -79,8 +78,9 @@ public class ModItems {
         addItemGroup(GOLD_NETHERITE_AXE);
         addItemGroup(GOLD_NETHERITE_HOE);
         addItemGroup(FLAME_FLINT);
+        addItemGroup(APPLE_JUICE);
 
-        addItemGroup(Sounds.GALAXY_ITEM);
+        addItemGroup(ModSounds.GALAXY_ITEM);
     }
 
     private static void addItemGroup(Item item){

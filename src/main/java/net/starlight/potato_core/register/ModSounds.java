@@ -1,4 +1,4 @@
-package net.starlight.potato_core.sound;
+package net.starlight.potato_core.register;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -9,7 +9,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.starlight.potato_core.FirstMod;
 
-public class Sounds {
+public class ModSounds {
     /**
      * galaxy item Galaxy唱片
      */

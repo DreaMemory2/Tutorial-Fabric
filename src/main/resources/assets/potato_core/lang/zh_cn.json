@@ -10,6 +10,7 @@
   "block.potato_core.compressed_wool_9x": "§c9重压缩毛巾",
   "block.potato_core.white_planks": "白色木板",
   "block.potato_core.white_plank_stairs": "白色木板楼梯",
+  "block.potato_core.drink_machine": "饮料制作机",
 
   "block.potato_core.corn_crop": "玉米种子",
   "block.potato_core.iron_log": "铁原木",
@@ -28,8 +29,12 @@
   "item.potato_core.paradise_water_bucket": "桶装温泉水",
   "item.potato_core.corn": "玉米",
   "item.potato_core.flame_flint": "烈焰打火石",
+  "item.potato_core.apple_juice": "苹果汁",
 
   "itemGroup.potato_core.potato_item": "土豆核心的物品组",
   "itemGroup.potato_core.potato_block": "土豆核心的方块组",
-  "itemGroup.potato_core.potato_building": "建筑方块"
+  "itemGroup.potato_core.potato_building": "建筑方块",
+
+  "potato_core.tootip.liquid.amount": "%s MB",
+  "potato_core.tooltip.liquid.amount.with.capacity": "%s / %s MB"
 }

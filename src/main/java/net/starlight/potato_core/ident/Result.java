@@ -17,5 +17,9 @@ public enum Result {
     /**
      * <p>表示该类已经弃用</p>
      */
-    DEPRECATED
+    DEPRECATED,
+    /**
+     * <p>表示该方法没有注解，无法得知类的解释</p>
+     */
+    UNKNOWN
 }

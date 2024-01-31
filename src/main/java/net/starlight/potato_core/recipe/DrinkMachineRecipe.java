@@ -23,7 +23,7 @@ public class DrinkMachineRecipe implements Recipe<SimpleInventory> {
     /** 输出的物品 */
     private final ItemStack output;
     /** 输入的物品 */
-    private final DefaultedList<Ingredient> recipesItem;
+    private final DefaultedList<Ingredient> recipeItems;
 
     /**
      * @param id 桦木工作台的Id
@@ -33,7 +33,7 @@ public class DrinkMachineRecipe implements Recipe<SimpleInventory> {
     public DrinkMachineRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipesItem) {
         this.id = id;
         this.output = output;
-        this.recipesItem = recipesItem;
+        this.recipeItems = recipesItem;
     }
 
     /**
@@ -48,8 +48,8 @@ public class DrinkMachineRecipe implements Recipe<SimpleInventory> {
         if (world.isClient) {
             return false;
         }
-        // 下标为0插槽上的物品是否与下标为1插槽上的物品匹配
-        return recipesItem.get(0).test(inventory.getStack(1));
+        // 下标为0插槽上的物品匹配
+        return recipeItems.get(0).test(inventory.getStack(1));
     }
 
     /**
@@ -83,7 +83,7 @@ public class DrinkMachineRecipe implements Recipe<SimpleInventory> {
     }
 
     @Override
-    public RecipeSerializer<DrinkMachineRecipe> getSerializer() {
+    public RecipeSerializer<?> getSerializer() {
         return Serializer.INSTANCE;
     }
 
@@ -91,7 +91,7 @@ public class DrinkMachineRecipe implements Recipe<SimpleInventory> {
      * <p>获取饮料制作机的类型</p>
      */
     @Override
-    public RecipeType<DrinkMachineRecipe> getType() {
+    public RecipeType<?> getType() {
         return Type.INSTANCE;
     }
     public static class Type implements RecipeType<DrinkMachineRecipe>{
@@ -129,11 +129,11 @@ public class DrinkMachineRecipe implements Recipe<SimpleInventory> {
          */
         @Override
         public DrinkMachineRecipe read(Identifier id, JsonObject json) {
-            // 输入合成所需的物品
-            JsonArray ingredinets = JsonHelper.getArray(json, "ingredinets");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY);
             // 输出合成后的物品
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
+            // 输入合成所需的物品
+            JsonArray ingredinets = JsonHelper.getArray(json, "ingredients");
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY);
             
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredinets.get(i)));
@@ -168,7 +168,7 @@ public class DrinkMachineRecipe implements Recipe<SimpleInventory> {
             for (Ingredient ingredient : recipe.getIngredients()) {
                 ingredient.write(buf);
             }
-            buf.writeItemStack(recipe.output);
+            buf.writeItemStack(recipe.getOutput());
         }
     }
 }

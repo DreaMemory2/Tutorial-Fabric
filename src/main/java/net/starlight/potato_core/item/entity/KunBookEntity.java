@@ -16,15 +16,11 @@ public class KunBookEntity implements SidedInventory {
     private final ItemStack stack;
     private final DefaultedList<ItemStack> items = DefaultedList.ofSize(0, ItemStack.EMPTY);
 
-    public KunBookEntity(ItemStack stack){
+    public KunBookEntity(ItemStack stack) {
         this.stack = stack;
-        NbtCompound tag = stack.getSubNbt("Items");
-        if(tag != null){
-            Inventories.readNbt(tag, items);
-        }
     }
 
-    public DefaultedList<ItemStack> getItems(){
+    public DefaultedList<ItemStack> getItems() {
         return items;
     }
 
@@ -35,11 +31,6 @@ public class KunBookEntity implements SidedInventory {
             result[i] = i;
         }
         return result;
-    }
-
-    @Override
-    public int getMaxCountPerStack() {
-        return 1;
     }
 
     @Override
@@ -61,7 +52,7 @@ public class KunBookEntity implements SidedInventory {
     public boolean isEmpty() {
         for (int i = 0; i < size(); i++) {
             ItemStack stack = getStack(i);
-            if(!stack.isEmpty()){
+            if (!stack.isEmpty()) {
                 return false;
             }
         }
@@ -75,7 +66,6 @@ public class KunBookEntity implements SidedInventory {
 
     @Override
     public ItemStack removeStack(int slot, int amount) {
-        // if(!result.isEmpty()) {...}
         return Inventories.splitStack(getItems(), slot, amount);
     }
 
@@ -87,7 +77,7 @@ public class KunBookEntity implements SidedInventory {
     @Override
     public void setStack(int slot, ItemStack stack) {
         getItems().set(slot, stack);
-        if( stack.getCount() > getMaxCountPerStack()){
+        if (stack.getCount() > getMaxCountPerStack()) {
             stack.setCount(getMaxCountPerStack());
         }
     }
