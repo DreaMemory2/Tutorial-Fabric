@@ -9,9 +9,10 @@ import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 import net.starlight.potato_core.register.ModBlocks;
 import net.starlight.potato_core.register.ModFluids;
+import net.starlight.potato_core.register.ModScreenHandlers;
 import net.starlight.potato_core.screen.DrinkMachineScreen;
 import net.starlight.potato_core.screen.KunBookScreen;
-import net.starlight.potato_core.register.ModScreenHandlers;
+
 // Client客户端
 public class FirstModClient implements ClientModInitializer {
     @Override

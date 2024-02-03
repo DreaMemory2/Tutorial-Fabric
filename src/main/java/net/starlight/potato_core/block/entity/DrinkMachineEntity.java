@@ -231,6 +231,7 @@ public class DrinkMachineEntity extends BlockEntity implements SidedInventory, E
      */
     public static void extractFluid(DrinkMachineEntity entity) {
         try (Transaction transaction = Transaction.openOuter()) {
+            // 设置液体，设置液体消耗MB
             entity.fluidStorage.extract(FluidVariant.of(Fluids.WATER),
                     200, transaction);
             transaction.commit();

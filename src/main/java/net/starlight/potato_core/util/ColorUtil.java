@@ -9,12 +9,12 @@ public class ColorUtil {
             Formatting.DARK_GRAY, Formatting.DARK_GREEN, Formatting.DARK_RED
     };
 
-    private static String formatting(String input, double delay){
+    private static String formatting(String input, double delay) {
         StringBuilder sb = new StringBuilder(input.length() * 3);
-        if(delay <= 0.0D){
+        if (delay <= 0.0D) {
             delay = 0.001D;
         }
-        int offset = (int)(Math.floor(System.currentTimeMillis() & 0x3FFFL) / delay) % ColorUtil.colour.length;
+        int offset = (int) (Math.floor(System.currentTimeMillis() & 0x3FFFL) / delay) % ColorUtil.colour.length;
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
             sb.append(ColorUtil.colour[(ColorUtil.colour.length + i - offset) % ColorUtil.colour.length]);

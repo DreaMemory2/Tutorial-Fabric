@@ -53,6 +53,8 @@ public class ModBlocks {
      * <p>饮料机，自定义方块信息界面，自定义配方</p>
      */
     public static final Block DRINK_MACHINE = registerBlock("drink_machine",new DrinkMachineBlock(FabricBlockSettings.of(Material.METAL)), ModItemGroup.BLOCKS);
+    /** 自定义蛋糕：苹果蛋糕 */
+    public static final Block APPLE_CAKE = registerBlock("apple_cake", new CakeBlock(FabricBlockSettings.copyOf(Blocks.CAKE)), ModItemGroup.BLOCKS);
 
     public static Block registerBlock(String name, Block block, ItemGroup tab){
         registerBlockItem(name, block, tab);

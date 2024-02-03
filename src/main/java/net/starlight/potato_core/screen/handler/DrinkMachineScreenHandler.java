@@ -19,7 +19,7 @@ import net.starlight.potato_core.util.FluidStack;
  */
 public class DrinkMachineScreenHandler extends ScreenHandler {
     /**
-     * 问题处理中...
+     * 方块实体
      */
     public final DrinkMachineEntity blockEntity;
     /**
@@ -31,14 +31,14 @@ public class DrinkMachineScreenHandler extends ScreenHandler {
      */
     private final PropertyDelegate propertyDelegate;
     /**
-     * 流体处理
+     * 流体类型
      */
     public FluidStack fluidStack;
 
     /**
      * <p>方块界面注册方法</p>
      *
-     * @param syncId          窗口界面的Id
+     * @param syncId          同步Id
      * @param playerInventory 玩家的库存
      */
     public DrinkMachineScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf) {
@@ -46,7 +46,7 @@ public class DrinkMachineScreenHandler extends ScreenHandler {
     }
 
     /**
-     * @param syncId           窗口界面的Id
+     * @param syncId           同步Id
      * @param playerInventory  玩家的库存
      * @param entity           方块实体
      * @param propertyDelegate 进度信息
@@ -161,6 +161,12 @@ public class DrinkMachineScreenHandler extends ScreenHandler {
     }
 
     /*-- 设置液体界面 -*/
+
+    /**
+     * <p>设置流体槽</p>>
+     *
+     * @param stack 流体类型
+     */
     public void setFuild(FluidStack stack) {
         this.fluidStack = stack;
     }

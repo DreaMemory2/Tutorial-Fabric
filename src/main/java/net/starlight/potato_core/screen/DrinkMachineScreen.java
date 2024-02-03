@@ -47,7 +47,7 @@ public class DrinkMachineScreen extends HandledScreen<DrinkMachineScreenHandler>
         // 设置标题位置中间
         this.titleX = (this.backgroundWidth - this.textRenderer.getWidth(this.title)) / 2;
         // 流体堆栈渲染器
-        assiginFluidStackRenderer();
+        assignFluidStackRenderer();
     }
 
     /**
@@ -95,17 +95,34 @@ public class DrinkMachineScreen extends HandledScreen<DrinkMachineScreenHandler>
      */
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+        // 游戏背景渲染
         this.renderBackground(matrices);
         super.render(matrices, mouseX, mouseY, delta);
+        // 鼠标悬停时渲染效果，白色提示框
         this.drawMouseoverTooltip(matrices, mouseX, mouseY);
     }
 
     /*-- 液体渲染处理 --*/
-    private void assiginFluidStackRenderer() {
+
+    /**
+     * <p>指定流体堆栈渲染器</p>
+     */
+    private void assignFluidStackRenderer() {
+        // 容量多少，是否显示容量，容量宽高大小
         fluidStackRenderer = new FluidStackRenderer(FluidStack.convertDropletsToMb(FluidConstants.BUCKET) * 20,
                 true, 11, 59);
     }
 
+    /**
+     * @param mouseX     鼠标X轴
+     * @param mouseY     鼠标Y轴
+     * @param x          GUI界面x轴
+     * @param y          GUI界面y轴
+     * @param fluidStack 流体
+     * @param offserX    图像信息x轴
+     * @param offserY    图像信息y轴
+     * @param renderer   渲染器
+     */
     private void renderFluidTooltip(MatrixStack matrices, int mouseX, int mouseY, int x, int y,
                                     FluidStack fluidStack, int offserX, int offserY, FluidStackRenderer renderer) {
         if (isMouseAboveArea(mouseX, mouseY, x, y, offserX, offserY, renderer)) {

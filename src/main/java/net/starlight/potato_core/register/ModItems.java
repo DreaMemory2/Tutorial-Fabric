@@ -13,6 +13,9 @@ import net.starlight.potato_core.FirstMod;
 import net.starlight.potato_core.armor.NetherArmorMeterial;
 import net.starlight.potato_core.item.*;
 import net.starlight.potato_core.item.tool.*;
+import net.starlight.potato_core.util.AEColor;
+
+import java.util.Map;
 
 /**
  * Chicken soup 鸡汤[使用后的效果：中毒V 00:10 反胃II 00:10]
@@ -27,7 +30,7 @@ public class ModItems {
                     .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200, 1), 1.0F)
                     .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 200, 4), 1.0F)
                     .build())));
-    public static final Item MUSIC_CARD = registerItem("music_card", new MusicCard(new FabricItemSettings()));
+    public static final Item ENDER_PEARL = registerItem("ender_pearl", new EnderPearl(new FabricItemSettings()));
     public static final Item RAP_BASKETBALL = registerItem("rap_basketball", new RapBasketball(new FabricItemSettings().maxCount(1)));
     public static final Item SMALL_BLACK = registerItem("small_black", new Item(new FabricItemSettings()
             .food(new FoodComponent.Builder().hunger(2).saturationModifier(2.0F).alwaysEdible().build())));
@@ -57,10 +60,13 @@ public class ModItems {
             -4, 0.0f, new FabricItemSettings()));
     public static final Item FLAME_FLINT = registerItem("flame_flint", new FlameFlintItem(new FabricItemSettings()));
     public static final Item APPLE_JUICE = registerItem("apple_juice", new Item(new FabricItemSettings()));
+    // 染色球注册 失败
+    // public static final Map<AEColor, PaintBallItem> PAINT_BALLS = PaintBallItem.create(false, "paint_ball");;
+    // public static final Map<AEColor, PaintBallItem> LUMEN_PAINT_BALLS = PaintBallItem.create(true, "lumen");
 
     public static void addItems() {
         addItemGroup(CHICKEN_SOUP);
-        addItemGroup(MUSIC_CARD);
+        addItemGroup(ENDER_PEARL);
         addItemGroup(RAP_BASKETBALL);
         addItemGroup(SMALL_BLACK);
         addItemGroup(KUN_BOOK);

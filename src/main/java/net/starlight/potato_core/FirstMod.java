@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 public class FirstMod implements ModInitializer {
 	public static final String MOD_ID = "potato_core";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-
 	public static ModManager modManager;
 
 	@Override
@@ -34,6 +33,8 @@ public class FirstMod implements ModInitializer {
 		ModPortal.registerPortal();
 		/* 配方登记口 */
 		ModRecipe.registerRecipes();
+		/* 药水注册入口 */
+		ModEffect.registerModEffects();
 
 		// Other Register
 		/* 方块在生态群系中渲染颜色的登记处 */
@@ -42,6 +43,10 @@ public class FirstMod implements ModInitializer {
 		ModBlockEntities.registerBlockEntities();
 		/* S2C发包注册口 */
 		ModMessages.registerS2CPackets();
+		/* 村民注册口 */
+		ModVillagers.registerVillager();
+		/* 注册交易系统 */
+		ModVillagers.registerTrades();
 	}
 
 	/**

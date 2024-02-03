@@ -24,8 +24,6 @@ public enum AEColor {
     public final String id;
     public final int rgb;
     public final String name;
-    public final String key;
-
     /**
      * @param name 颜色名称
      * @param id 颜色英文id
@@ -35,7 +33,5 @@ public enum AEColor {
         this.id = id;
         this.rgb = rgb;
         this.name = name;
-        // 颜色Key?
-        this.key = "color.ae2." + id;
     }
 }

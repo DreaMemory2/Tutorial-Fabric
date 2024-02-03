@@ -21,7 +21,7 @@
   "item.potato_core.chicken_soup": "鸡汤",
   "item.potato_core.galaxy_item.desc": "Galaxy-2023",
   "item.potato_core.galaxy_item": "Galaxy唱片",
-  "item.potato_core.music_card": "音乐卡片",
+  "item.potato_core.ender_pearl": "末影珍珠",
   "item.potato_core.rap_basketball": "唱Rap篮球",
   "item.potato_core.small_black": "小黑子",
   "item.potato_core.kun_book": "Kun的书",
@@ -31,10 +31,27 @@
   "item.potato_core.flame_flint": "烈焰打火石",
   "item.potato_core.apple_juice": "苹果汁",
 
+  "item.minecraft.potion.effect.fresh": "清爽药水",
+  "item.minecraft.potion.effect.long_fresh": "清爽药水",
+  "item.minecraft.potion.effect.strong_fresh": "清爽药水",
+  "item.minecraft.splash_potion.effect.fresh": "喷溅型清爽药水",
+  "item.minecraft.splash_potion.effect.long_fresh": "喷溅型清爽药水",
+  "item.minecraft.splash_potion.effect.strong_fresh": "喷溅型清爽药水",
+  "item.minecraft.lingering_potion.effect.fresh": "滞留型清爽药水",
+  "item.minecraft.lingering_potion.effect.long_fresh": "滞留型清爽药水",
+  "item.minecraft.lingering_potion.effect.strong_fresh": "滞留型清爽药水",
+  "item.minecraft.tipped_arrow.effect.fresh": "清爽之箭",
+  "item.minecraft.tipped_arrow.effect.long_fresh": "清爽之箭",
+  "item.minecraft.tipped_arrow.effect.strong_fresh": "清爽之箭",
+
   "itemGroup.potato_core.potato_item": "土豆核心的物品组",
   "itemGroup.potato_core.potato_block": "土豆核心的方块组",
   "itemGroup.potato_core.potato_building": "建筑方块",
 
   "potato_core.tootip.liquid.amount": "%s MB",
-  "potato_core.tooltip.liquid.amount.with.capacity": "%s / %s MB"
+  "potato_core.tooltip.liquid.amount.with.capacity": "%s / %s MB",
+
+  "effect.potato_core.fresh": "清爽",
+
+  "entity.minecraft.villager.blue_worker": "蓝色工作者"
 }

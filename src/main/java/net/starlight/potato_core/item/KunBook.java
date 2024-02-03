@@ -22,14 +22,8 @@ public class KunBook extends Item {
     }
 
     @Override
-    public int getMaxUseTime(ItemStack stack) {
-        return 0;
-    }
-
-    @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        TypedActionResult<ItemStack> a = super.use(world, user, hand);
-        ItemStack itemStack = a.getValue();
+        TypedActionResult<ItemStack> itemStack = super.use(world, user, hand);
         user.openHandledScreen(new ExtendedScreenHandlerFactory() {
             @Override
             public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
@@ -38,15 +32,14 @@ public class KunBook extends Item {
 
             @Override
             public Text getDisplayName() {
-                return itemStack.getName();
-                // return Text.literal("Kun Book");
+                return itemStack.getValue().getName();
             }
 
             @Override
             public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-                return new KunBookScreenHandler(syncId, inv, new KunBookEntity(itemStack));
+                return new KunBookScreenHandler(syncId, inv, new KunBookEntity(itemStack.getValue()));
             }
         });
-        return a;
+        return itemStack;
     }
 }

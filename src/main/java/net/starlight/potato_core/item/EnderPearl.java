@@ -9,9 +9,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class MusicCard extends Item {
+public class EnderPearl extends Item {
 
-    public MusicCard(Settings settings) {
+    public EnderPearl(Settings settings) {
         super(settings);
     }
 
