@@ -61,35 +61,55 @@ public class ModVillagers {
         // 注册村民交易
         // 注册蓝色村民交易系统
         // registerVillagerOffers(职业，交易等级，交易详情)
-        TradeOfferHelper.registerVillagerOffers(BLUE_WORKER, 1,
-                factories -> {
+        TradeOfferHelper.registerVillagerOffers(BLUE_WORKER, 1, factories -> {
                     // 添加一个交易选项内容
                     factories.add((entity, random) -> new TradeOffer(
                             // 输入所交易物品
                             new ItemStack(Items.DIAMOND, 5),
-                            new ItemStack(Items.DIAMOND_HELMET),
+                            new ItemStack(ModItems.DIAMOND_HELMET, 1),
                             // 最大交易次数，交易一次得到的经验奖励，激怒村民后涨价幅度
-                            6, 2, 0.02f
-                    ));
+                            10, 10, 0.02f));
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(Items.DIAMOND, 8),
-                            new ItemStack(Items.DIAMOND_CHESTPLATE, 1),
-                            6, 2, 0.02F
-                    ));
-                });
-        TradeOfferHelper.registerVillagerOffers(BLUE_WORKER, 2,
-                factories -> {
+                            new ItemStack(ModItems.DIAMOND_CHESTPLATE, 1),
+                            10, 10, 0.02F));
+        });
+        TradeOfferHelper.registerVillagerOffers(BLUE_WORKER, 2, factories -> {
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(Items.DIAMOND, 7),
-                            new ItemStack(Items.DIAMOND_LEGGINGS, 1),
-                            6, 2, 0.02F
-                    ));
+                            new ItemStack(ModItems.DIAMOND_LEGGINGS, 1),
+                            10, 20, 0.02F));
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(Items.DIAMOND, 4),
-                            new ItemStack(Items.DIAMOND_BOOTS, 1),
-                            6, 2, 0.02F
-                    ));
-                });
+                            new ItemStack(ModItems.DIAMOND_BOOTS, 1),
+                            10, 20, 0.02F));
+        });
+        TradeOfferHelper.registerVillagerOffers(BLUE_WORKER, 3, factories -> {
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.DIAMOND, 2),
+                            new ItemStack(ModItems.DIAMOND_SWORD, 1),
+                            10, 30, 0.02F));
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.DIAMOND, 3),
+                            new ItemStack(ModItems.DIAMOND_PICKAXE, 1),
+                            10, 30, 0.02F));
+        });
+        TradeOfferHelper.registerVillagerOffers(BLUE_WORKER, 4, factories -> {
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.DIAMOND, 3),
+                            new ItemStack(ModItems.DIAMOND_AXE, 1),
+                            10, 30, 0.02F));
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.DIAMOND, 1),
+                            new ItemStack(ModItems.DIAMOND_SHOVEL, 1),
+                            10, 30, 0.02F));
+        });
+        TradeOfferHelper.registerVillagerOffers(BLUE_WORKER, 5, factories -> {
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.DIAMOND, 1),
+                            new ItemStack(ModItems.LUCKY_POTION, 1),
+                            10, 30, 0.02F));
+        });
     }
 
     public static Identifier setId(String name) {

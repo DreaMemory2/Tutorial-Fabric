@@ -9,6 +9,7 @@ import net.starlight.potato_core.FirstMod;
 public class ModPaintings {
     public static final PaintingVariant KUN_HEAD = registerPainting("kun_head", new PaintingVariant(64, 64));
     public static final PaintingVariant KUN_NAME = registerPainting("kun_name", new PaintingVariant(64, 32));
+    public static final PaintingVariant BLUEY = registerPainting("bluey", new PaintingVariant(64, 64));
 
     private static PaintingVariant registerPainting(String name, PaintingVariant paintingVariant){
         return Registry.register(Registries.PAINTING_VARIANT, new Identifier(FirstMod.MOD_ID, name), paintingVariant);

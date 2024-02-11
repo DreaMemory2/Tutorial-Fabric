@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "potato_core:block/crystal_grass_block"
+      },
+      {
+        "model": "potato_core:block/crystal_grass_block",
+        "y": 90
+      },
+      {
+        "model": "potato_core:block/crystal_grass_block",
+        "y": 180
+      },
+      {
+        "model": "potato_core:block/crystal_grass_block",
+        "y": 270
+      }
+    ]
+  }
+}

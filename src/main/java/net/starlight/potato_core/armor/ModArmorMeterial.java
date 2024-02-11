@@ -11,11 +11,12 @@ import net.starlight.potato_core.register.ModItems;
 
 import java.util.function.Supplier;
 
-public enum NetherArmorMeterial implements ArmorMaterial {
-    GOLDERITE("golderite", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0f, 0.1f, () -> Ingredient.ofItems(ModItems.GOLD_NETHERITE));
+public enum ModArmorMeterial implements ArmorMaterial {
+    GOLDERITE("golderite", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0f, 0.1f, () -> Ingredient.ofItems(ModItems.GOLD_NETHERITE)),
+    DIAMOND("diamond", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0f, 0.1f, () -> Ingredient.ofItems(Items.DIAMOND));
 
-    /** Base Durability 基本耐久形 */
-    private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
+    /** Base Durability 基本耐久性 */
+    private static final int[] BASE_DURABILITY = new int[]{-1, -1, -1, -1};
     /** name 材料的名称 */
     private final String name;
     /** Durability Multiplier 耐久倍增器 */
@@ -33,7 +34,7 @@ public enum NetherArmorMeterial implements ArmorMaterial {
     /** Repair Ingredient Supplier 修复的材料 */
     private final Lazy<Ingredient> repairIngredientSupplier;
 
-    NetherArmorMeterial(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredientSupplier) {
+    ModArmorMeterial(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredientSupplier) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionAmounts = protectionAmounts;

@@ -1,6 +1,7 @@
 package net.starlight.potato_core.tool;
 
 import net.fabricmc.yarn.constants.MiningLevels;
+import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Lazy;
@@ -8,8 +9,9 @@ import net.starlight.potato_core.register.ModItems;
 
 import java.util.function.Supplier;
 
-public enum NetherToolMeterial implements ToolMaterial {
-    GOLDERITE(MiningLevels.NETHERITE, 2031, 9.0f, 4.0f, 15, () -> Ingredient.ofItems(ModItems.GOLD_NETHERITE));
+public enum ModToolMeterial implements ToolMaterial {
+    GOLDERITE(MiningLevels.NETHERITE, 2031, 9.0f, 4.0f, 15, () -> Ingredient.ofItems(ModItems.GOLD_NETHERITE)),
+    DIAMOND(MiningLevels.NETHERITE, -1, 9.0f, 4.0f, 15, () -> Ingredient.ofItems(Items.DIAMOND));
     /** 挖掘等级 */
     private final int miningLevel;
     /** 物品耐久性 */
@@ -23,13 +25,13 @@ public enum NetherToolMeterial implements ToolMaterial {
     /** 修理材料 */
     private final Lazy<Ingredient> repairIngredient;
 
-    NetherToolMeterial(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
+    ModToolMeterial(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;
         this.attackDamage = attackDamage;
         this.enchantability = enchantability;
-        this.repairIngredient = new Lazy<Ingredient>(repairIngredient);
+        this.repairIngredient = new Lazy<>(repairIngredient);
     }
     @Override
     public int getDurability() {

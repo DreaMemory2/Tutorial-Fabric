@@ -3,15 +3,8 @@ package net.starlight.potato_core.register;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.minecraft.client.color.item.ItemColorProvider;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
-import net.minecraft.item.ItemConvertible;
-import net.starlight.potato_core.item.PaintBallItem;
-import net.starlight.potato_core.util.AEColor;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * <p>其他注册方式</p>

@@ -14,9 +14,9 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.starlight.potato_core.FirstMod;
 import net.starlight.potato_core.block.CornCrop;
+import net.starlight.potato_core.block.CrystalGrassBlock;
 import net.starlight.potato_core.block.DrinkMachineBlock;
 import net.starlight.potato_core.block.IronSaplingGenerator;
-import net.starlight.potato_core.block.NineCompressedWool;
 
 public class ModBlocks {
     // 压缩羊毛
@@ -28,7 +28,7 @@ public class ModBlocks {
     public static final Block WOOL_6X = ModBlocks.registerBlock("compressed_wool_6x", new Block(Settings.copy(Blocks.WHITE_WOOL)), ModItemGroup.BUILDING);
     public static final Block WOOL_7X = ModBlocks.registerBlock("compressed_wool_7x", new Block(Settings.copy(Blocks.WHITE_WOOL)), ModItemGroup.BUILDING);
     public static final Block WOOL_8X = ModBlocks.registerBlock("compressed_wool_8x", new Block(Settings.copy(Blocks.WHITE_WOOL)), ModItemGroup.BUILDING);
-    public static final Block WOOL_9X = ModBlocks.registerBlock("compressed_wool_9x", new NineCompressedWool(Settings.copy(Blocks.WHITE_WOOL)), ModItemGroup.BUILDING);
+    public static final Block WOOL_9X = ModBlocks.registerBlock("compressed_wool_9x", new Block(Settings.copy(Blocks.WHITE_WOOL)), ModItemGroup.BUILDING);
     // Difficult Problems
     // 玉米的作物
     public static Block CORN = Registry.register(Registries.BLOCK, new Identifier(FirstMod.MOD_ID, "corn"),
@@ -54,8 +54,9 @@ public class ModBlocks {
      */
     public static final Block DRINK_MACHINE = registerBlock("drink_machine",new DrinkMachineBlock(FabricBlockSettings.of(Material.METAL)), ModItemGroup.BLOCKS);
     /** 自定义蛋糕：苹果蛋糕 */
-    public static final Block APPLE_CAKE = registerBlock("apple_cake", new CakeBlock(FabricBlockSettings.copyOf(Blocks.CAKE)), ModItemGroup.BLOCKS);
-
+    public static final Block APPLE_CAKE = registerBlock("apple_cake", new CakeBlock(FabricBlockSettings.copyOf(Blocks.CAKE)), ModItemGroup.ITEMS);
+    /** 自定义草方块 */
+    public static final Block CRYSAL_GRASS_BLOCK = registerBlock("crystal_grass_block", new CrystalGrassBlock(ModBlocks.CRYSAL_GRASS_BLOCK), ModItemGroup.BLOCKS);
     public static Block registerBlock(String name, Block block, ItemGroup tab){
         registerBlockItem(name, block, tab);
         return Registry.register(Registries.BLOCK, new Identifier(FirstMod.MOD_ID, name), block);
