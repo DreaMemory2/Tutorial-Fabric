@@ -17,7 +17,7 @@ public class ModBlockTagGeneration extends FabricTagProvider.BlockTagProvider {
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup arg) {
+    public void configure(RegistryWrapper.WrapperLookup arg) {
         // 原木方块标签
         getOrCreateTagBuilder(BlockTags.LOGS)
                 .add(ModBlocks.IRON_LOG);
@@ -45,5 +45,23 @@ public class ModBlockTagGeneration extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.GREEN_CANDLE_APPLE_CAKE)
                 .add(ModBlocks.RED_CANDLE_APPLE_CAKE)
                 .add(ModBlocks.BLACK_CANDLE_APPLE_CAKE);
+        // 树叶标签
+        getOrCreateTagBuilder(BlockTags.LEAVES)
+                .add(ModBlocks.IRON_LEAVES);
+        // 使用工具标签
+        configureTools(arg);
+    }
+
+    private void configureTools(RegistryWrapper.WrapperLookup arg) {
+        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
+                .add(ModBlocks.CRYSAL_GRASS_BLOCK)
+                .add(ModBlocks.CRYSAL_DIRT);
+        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(ModBlocks.STONE);
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(ModBlocks.IRON_LOG)
+                .add(ModBlocks.WHITE_PLANKS)
+                .add(ModBlocks.WHITE_PLANK_STAIRS);
+
     }
 }

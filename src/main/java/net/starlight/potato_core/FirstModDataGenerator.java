@@ -21,6 +21,7 @@ public class FirstModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModLanguageGenerator::new);
         pack.addProvider(ModWorldGenerator::new);
         pack.addProvider(ModRecipeGenerator::new);
+        pack.addProvider(ModBlockLootTables::new);
     }
 
     @Override

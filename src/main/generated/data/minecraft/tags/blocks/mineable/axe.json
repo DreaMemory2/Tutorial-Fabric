@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "potato_core:iron_log",
+    "potato_core:white_planks",
+    "potato_core:white_plank_stairs"
+  ]
+}
