@@ -20,6 +20,7 @@ public class FirstModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModChineseGenerator::new);
         pack.addProvider(ModLanguageGenerator::new);
         pack.addProvider(ModWorldGenerator::new);
+        pack.addProvider(ModRecipeGenerator::new);
     }
 
     @Override

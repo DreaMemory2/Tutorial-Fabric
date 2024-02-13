@@ -54,7 +54,7 @@ public class ModLanguageGenerator extends FabricLanguageProvider {
         builder.add("entity.minecraft.villager.blue_worker", "§9Lucky Villager");
     }
     private void generateToolAndArmorTranslations(TranslationBuilder builder) {
-        builder.add(ModItems.GOLD_NETHERITE, "Gold Upgraded Netherite Ingot");
+        builder.add(ModItems.GOLD_NETHERITE_INGOT, "Gold Upgraded Netherite Ingot");
         builder.add(ModItems.GOLD_NETHERITE_HELMET, "Gold Upgraded Netherite Helmet");
         builder.add(ModItems.GOLD_NETHERITE_CHESTPLATE, "Gold Upgraded Netherite Chestplate");
         builder.add(ModItems.GOLD_NETHERITE_LEGGINGS, "Gold Upgraded Netherite Leggings");

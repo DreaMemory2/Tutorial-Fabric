@@ -12,7 +12,7 @@ import net.starlight.potato_core.register.ModItems;
 import java.util.function.Supplier;
 
 public enum ModArmorMeterial implements ArmorMaterial {
-    GOLDERITE("golderite", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0f, 0.1f, () -> Ingredient.ofItems(ModItems.GOLD_NETHERITE)),
+    GOLDERITE("golderite", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0f, 0.1f, () -> Ingredient.ofItems(ModItems.GOLD_NETHERITE_INGOT)),
     DIAMOND("diamond", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0f, 0.1f, () -> Ingredient.ofItems(Items.DIAMOND));
 
     /** Base Durability 基本耐久性 */
@@ -70,7 +70,7 @@ public enum ModArmorMeterial implements ArmorMaterial {
      */
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(ModItems.GOLD_NETHERITE);
+        return Ingredient.ofItems(ModItems.GOLD_NETHERITE_INGOT);
     }
 
     @Override

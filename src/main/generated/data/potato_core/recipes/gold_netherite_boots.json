@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "potato_core:gold_upgraded_netherite_ingot"
+  },
+  "base": {
+    "item": "minecraft:diamond_boots"
+  },
+  "result": {
+    "item": "potato_core:gold_upgraded_netherite_boots"
+  }
+}

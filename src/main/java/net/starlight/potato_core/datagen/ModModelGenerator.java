@@ -54,7 +54,7 @@ public class ModModelGenerator extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator item) {
         // 锭、盔甲、武器
-        item.register(ModItems.GOLD_NETHERITE, Models.GENERATED);
+        item.register(ModItems.GOLD_NETHERITE_INGOT, Models.GENERATED);
         item.register(ModItems.GOLD_NETHERITE_HELMET, Models.GENERATED);
         item.register(ModItems.GOLD_NETHERITE_CHESTPLATE, Models.GENERATED);
         item.register(ModItems.GOLD_NETHERITE_LEGGINGS, Models.GENERATED);

@@ -10,7 +10,7 @@ import net.starlight.potato_core.register.ModItems;
 import java.util.function.Supplier;
 
 public enum ModToolMeterial implements ToolMaterial {
-    GOLDERITE(MiningLevels.NETHERITE, 2031, 9.0f, 4.0f, 15, () -> Ingredient.ofItems(ModItems.GOLD_NETHERITE)),
+    GOLDERITE(MiningLevels.NETHERITE, 2031, 9.0f, 4.0f, 15, () -> Ingredient.ofItems(ModItems.GOLD_NETHERITE_INGOT)),
     DIAMOND(MiningLevels.NETHERITE, -1, 9.0f, 4.0f, 15, () -> Ingredient.ofItems(Items.DIAMOND));
     /** 挖掘等级 */
     private final int miningLevel;
@@ -63,6 +63,6 @@ public enum ModToolMeterial implements ToolMaterial {
      */
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(ModItems.GOLD_NETHERITE);
+        return Ingredient.ofItems(ModItems.GOLD_NETHERITE_INGOT);
     }
 }

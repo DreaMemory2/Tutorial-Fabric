@@ -36,7 +36,7 @@ public class ModItems {
     public static final Item CORN = registerItem("corn", new Item(new FabricItemSettings().food(FoodComponents.POTATO)));
     public static final Item CORN_SEEDS = registerItem("corn_seeds",new BlockItem(ModBlocks.CORN, new FabricItemSettings()));
     // 锭、装甲、武器
-    public static final Item GOLD_NETHERITE = registerItem("gold_upgraded_netherite_ingot", new Item(new FabricItemSettings()));
+    public static final Item GOLD_NETHERITE_INGOT = registerItem("gold_upgraded_netherite_ingot", new Item(new FabricItemSettings()));
     public static final Item GOLD_NETHERITE_HELMET = registerItem("gold_upgraded_netherite_helmet", new ArmorItem(ModArmorMeterial.GOLDERITE,
             EquipmentSlot.HEAD, new FabricItemSettings()));
     public static final Item GOLD_NETHERITE_CHESTPLATE = registerItem("gold_upgraded_netherite_chestplate", new ArmorItem(ModArmorMeterial.GOLDERITE,
