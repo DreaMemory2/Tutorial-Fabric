@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
+import net.starlight.potato_core.datagen.*;
 import net.starlight.potato_core.world.feature.TreeConfiguredFeatures;
 import net.starlight.potato_core.world.feature.TreePlacedFeatures;
 
@@ -13,6 +14,12 @@ import net.starlight.potato_core.world.feature.TreePlacedFeatures;
 public class FirstModDataGenerator implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
+        FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
+        pack.addProvider(ModBlockTagGeneration::new);
+        pack.addProvider(ModModelGenerator::new);
+        pack.addProvider(ModChineseGenerator::new);
+        pack.addProvider(ModLanguageGenerator::new);
+        pack.addProvider(ModWorldGenerator::new);
     }
 
     @Override

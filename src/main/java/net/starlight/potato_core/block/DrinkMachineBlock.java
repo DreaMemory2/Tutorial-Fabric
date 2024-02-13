@@ -1,28 +1,42 @@
 package net.starlight.potato_core.block;
 
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
-import net.minecraft.block.BlockEntityProvider;
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ItemScatterer;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.Properties;
+import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.starlight.potato_core.block.entity.DrinkMachineEntity;
 import net.starlight.potato_core.register.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
 
 public class DrinkMachineBlock extends BlockWithEntity implements BlockEntityProvider {
+    /** 方块属性 */
+    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
+
     public DrinkMachineBlock(Settings settings) {
         super(settings);
+        // 设置默认的方向
+        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH));
+    }
+
+    /**
+     * <p>设置方块放置时的状态</p>
+     */
+    @Nullable
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
     }
 
     /**
@@ -86,5 +100,29 @@ public class DrinkMachineBlock extends BlockWithEntity implements BlockEntityPro
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return checkType(type, ModBlockEntities.DRINK_MACHINE_ENTITY, DrinkMachineEntity::tick);
+    }
+
+    /**
+     * <p>方块旋转方法：轴旋转</p>
+     */
+    @Override
+    public BlockState rotate(BlockState state, BlockRotation rotation) {
+        return state.with(FACING, rotation.rotate(state.get(FACING)));
+    }
+
+    /**
+     *  <p>方块旋转方法：镜像</p>
+     */
+    @Override
+    public BlockState mirror(BlockState state, BlockMirror mirror) {
+        return state.rotate(mirror.getRotation(state.get(FACING)));
+    }
+
+    /**
+     * <p>添加方块属性</p>
+     */
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(FACING);
     }
 }

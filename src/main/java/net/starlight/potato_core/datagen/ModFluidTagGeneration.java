@@ -8,11 +8,17 @@ import net.starlight.potato_core.register.ModFluids;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * <p>流体标签生成器</p>
+ */
 public class ModFluidTagGeneration extends FabricTagProvider.FluidTagProvider {
     public ModFluidTagGeneration(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
         super(output, completableFuture);
     }
 
+    /**
+     * <p>配置流体标签</p>
+     */
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(FluidTags.WATER)

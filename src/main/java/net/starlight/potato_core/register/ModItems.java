@@ -14,14 +14,14 @@ import net.starlight.potato_core.armor.ModArmorMeterial;
 import net.starlight.potato_core.item.*;
 import net.starlight.potato_core.item.tool.*;
 
-/**
- * Chicken soup 鸡汤[使用后的效果：中毒V 00:10 反胃II 00:10]
- * StatusEffectInstance(StatusEffect type, int duration, int amplifier)     给予物品的效果buff
- * 其中statusEffect是状态效果的ID, duration是状态效果的持续时间单位tick, amplifier是增益状态效应
- * 0表示I, 1表示II...没有-1，如果int amplifier = -1则会选择默认值0
- * 100tick = 5s 1s = 20tick,则10s = 200tick
- */
 public class ModItems {
+    /**
+     * Chicken soup 鸡汤[使用后的效果：中毒V 00:10 反胃II 00:10]
+     * StatusEffectInstance(StatusEffect type, int duration, int amplifier)     给予物品的效果buff
+     * 其中statusEffect是状态效果的ID, duration是状态效果的持续时间单位tick, amplifier是增益状态效应
+     * 0表示I, 1表示II...没有-1，如果int amplifier = -1则会选择默认值0
+     * 100tick = 5s 1s = 20tick,则10s = 200tick
+     */
     public static final Item CHICKEN_SOUP = registerItem("chicken_soup", new ChickenSoup(new FabricItemSettings()
             .food(new FoodComponent.Builder().hunger(2).saturationModifier(2.0F).alwaysEdible()
                     .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200, 1), 1.0F)

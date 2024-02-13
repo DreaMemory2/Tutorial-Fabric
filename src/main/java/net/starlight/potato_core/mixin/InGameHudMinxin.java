@@ -19,7 +19,7 @@ import net.starlight.potato_core.mod.Logo;
  * @author Stralight
  * @since 1.0
  */
-@Mixin(InGameHud.class)
+// @Mixin(InGameHud.class)
 public class InGameHudMinxin {
     /**
      * <p>Invoke代表在指定方法调用时注入</p>
@@ -28,7 +28,7 @@ public class InGameHudMinxin {
      * <p>at注解有个ordinal属性：输入序号，指定第几个方法调用时注入;这里时从0开始，所以第五个方法设置为4</p>
      * @see Logo#draw(MatrixStack matrices) 绘制窗口内右上角文字的方法
      */
-    @Inject(method = "render", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;enableBlend()V", ordinal = 4))
+    // @Inject(method = "render", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;enableBlend()V", ordinal = 4))
     private void render(MatrixStack matrices, float tickDelta, CallbackInfo ci) {
         // 调用draw方法来进行绘制
         FirstMod.modManager.getIsEnables().forEach(it -> it.draw(matrices));

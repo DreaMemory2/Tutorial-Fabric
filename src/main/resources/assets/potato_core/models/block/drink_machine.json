@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "potato_core:block/drink_machine",
-    "side": "potato_core:block/machine_side",
-    "top": "potato_core:block/machine_top"
-  }
-}

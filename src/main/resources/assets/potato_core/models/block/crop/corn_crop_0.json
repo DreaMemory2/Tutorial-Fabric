@@ -1,0 +1,6 @@
+{
+  "parent": "potato_core:block/cross_crop",
+  "textures": {
+    "crop": "potato_core:block/crop/corn_stage_0"
+  }
+}

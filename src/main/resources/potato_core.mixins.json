@@ -9,7 +9,6 @@
     "InfiniteItemMixin"
   ],
   "client": [
-    "InGameHudMinxin",
     "KeyboardMixin",
     "MinecraftClientMixin",
     "MyMixin"

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "potato_core:block/crystal_dirt"
+    }
+  }
+}

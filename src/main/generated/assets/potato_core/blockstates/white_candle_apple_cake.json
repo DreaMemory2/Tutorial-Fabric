@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "potato_core:block/white_candle_apple_cake"
+    },
+    "lit=true": {
+      "model": "potato_core:block/white_candle_apple_cake_lit"
+    }
+  }
+}

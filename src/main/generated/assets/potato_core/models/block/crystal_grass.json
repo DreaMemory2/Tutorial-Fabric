@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "potato_core:block/crystal_dirt",
+    "particle": "potato_core:block/crystal_dirt",
+    "side": "potato_core:block/crystal_grass_side",
+    "top": "potato_core:block/crystal_grass"
+  }
+}

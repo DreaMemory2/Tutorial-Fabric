@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "potato_core:apple_cake",
+    "potato_core:candle_apple_cake",
+    "potato_core:white_candle_apple_cake",
+    "potato_core:orange_candle_apple_cake",
+    "potato_core:magenta_candle_apple_cake",
+    "potato_core:light_blue_candle_apple_cake",
+    "potato_core:yellow_candle_apple_cake",
+    "potato_core:lime_candle_apple_cake",
+    "potato_core:pink_candle_apple_cake",
+    "potato_core:gray_candle_apple_cake",
+    "potato_core:light_gray_candle_apple_cake",
+    "potato_core:cyan_candle_apple_cake",
+    "potato_core:purple_candle_apple_cake",
+    "potato_core:blue_candle_apple_cake",
+    "potato_core:brown_candle_apple_cake",
+    "potato_core:green_candle_apple_cake",
+    "potato_core:red_candle_apple_cake",
+    "potato_core:black_candle_apple_cake"
+  ]
+}
