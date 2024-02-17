@@ -32,6 +32,7 @@ public class ModModelGenerator extends FabricModelProvider {
         block.registerSimpleCubeAll(ModBlocks.CRYSAL_DIRT);
         // 树叶生成器
         block.registerSingleton(ModBlocks.IRON_LEAVES, TexturedModel.LEAVES);
+        block.registerSingleton(ModBlocks.MAPLE_LEAVES, TexturedModel.LEAVES);
         // 原木生成器
         block.registerLog(ModBlocks.IRON_LOG).log(ModBlocks.IRON_LOG);
         // 树苗生成器

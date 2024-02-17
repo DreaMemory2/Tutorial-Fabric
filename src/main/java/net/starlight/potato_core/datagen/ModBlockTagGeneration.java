@@ -49,10 +49,10 @@ public class ModBlockTagGeneration extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.LEAVES)
                 .add(ModBlocks.IRON_LEAVES);
         // 使用工具标签
-        configureTools(arg);
+        configureTools();
     }
 
-    private void configureTools(RegistryWrapper.WrapperLookup arg) {
+    private void configureTools() {
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ModBlocks.CRYSAL_GRASS_BLOCK)
                 .add(ModBlocks.CRYSAL_DIRT);

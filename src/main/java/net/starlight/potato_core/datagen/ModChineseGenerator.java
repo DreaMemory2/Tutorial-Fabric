@@ -32,6 +32,7 @@ public class ModChineseGenerator extends FabricLanguageProvider {
         builder.add(ModBlocks.IRON_LEAVES, "铁树叶");
         builder.add(ModBlocks.IRON_SAPLING, "铁树苗");
         builder.add(ModBlocks.STONE, "生态石头");
+        builder.add(ModBlocks.MAPLE_LEAVES, "枫树叶");
 
         // 物品语言配置
         builder.add(ModItems.CHICKEN_SOUP, "鸡汤");

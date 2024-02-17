@@ -1,6 +1,7 @@
 package net.starlight.potato_core.world.feature;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -32,7 +33,7 @@ public class TreeConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> IRON_TREE_BEES = registry("iron_tree_bees");
     public static final RegistryKey<ConfiguredFeature<?, ?>> FANCY_IRON = registry("fancy_iron");
     public static final RegistryKey<ConfiguredFeature<?, ?>> FANCY_IRON_BEES = registry("fancy_iron_bees");
-
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MAPLE_TREE = registry("maple_tree");
     /**
      * 原版的树的结构分为不同的种类，方便你做出复杂并且漂亮的树
      * @param log TrunkProvider 生成树干
@@ -66,6 +67,14 @@ public class TreeConfiguredFeatures {
     }
 
     /**
+     * <p>Maple Tree</p>
+     */
+    private static TreeFeatureConfig.Builder mapleTree() {
+        return TreeConfiguredFeatures.builder(Blocks.OAK_LOG, ModBlocks.MAPLE_LEAVES,
+                5,3, 0, 2).ignoreVines();
+    }
+
+    /**
      * <p>Fancy Iron</p>
      */
     private static TreeFeatureConfig.Builder fancyIron() {
@@ -85,6 +94,7 @@ public class TreeConfiguredFeatures {
         ConfiguredFeatures.register(featureRegisterable, IRON_TREE_BEES, Feature.TREE, TreeConfiguredFeatures.ironTree().decorators(List.of(beehiveTreeDecorator4)).build());
         ConfiguredFeatures.register(featureRegisterable, FANCY_IRON, Feature.TREE, TreeConfiguredFeatures.fancyIron().decorators(List.of(beehiveTreeDecorator4)).build());
         ConfiguredFeatures.register(featureRegisterable, FANCY_IRON_BEES, Feature.TREE, TreeConfiguredFeatures.fancyIron().decorators(List.of(beehiveTreeDecorator5)).build());
+        ConfiguredFeatures.register(featureRegisterable, MAPLE_TREE, Feature.TREE, TreeConfiguredFeatures.mapleTree().build());
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registry(String id) {

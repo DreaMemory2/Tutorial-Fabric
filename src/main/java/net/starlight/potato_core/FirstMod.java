@@ -47,6 +47,8 @@ public class FirstMod implements ModInitializer {
 		ModVillagers.registerVillager();
 		/* 注册交易系统 */
 		ModVillagers.registerTrades();
+		/* 生成器注册入口 */
+		ModGeneration.registerGeneration();
 	}
 
 	/**

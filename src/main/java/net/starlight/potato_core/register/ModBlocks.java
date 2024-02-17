@@ -39,6 +39,7 @@ public class ModBlocks {
     // 铁树需要的原木、树叶和树苗
     public static final Block IRON_LOG = registerBlock("iron_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)), ModItemGroup.BUILDING);
     public static final Block IRON_LEAVES = registerBlock("iron_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)), ModItemGroup.BUILDING);
+    public static final Block MAPLE_LEAVES = registerBlock("maple_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)), ModItemGroup.BUILDING); // 树的生成
     public static final Block IRON_SAPLING = registerBlock("iron_sapling", new SaplingBlock(new IronSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), ModItemGroup.ITEMS);
     /**
      * <p>实现石头在不同群系中的颜色渲染效果，跟随生态群系的主要颜色变化而变化</p>
