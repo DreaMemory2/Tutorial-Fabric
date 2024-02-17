@@ -8,13 +8,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.test.TestContext;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.starlight.potato_core.ident.Result;
 import net.starlight.potato_core.ident.Test;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -64,6 +64,10 @@ public class FlameFlintRecipe implements Recipe<SimpleInventory> {
     }
 
     @Override
+    public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
+        return null;
+    }
+
     public ItemStack craft(SimpleInventory inventory) {
         return null;
     }
@@ -74,6 +78,10 @@ public class FlameFlintRecipe implements Recipe<SimpleInventory> {
     }
 
     @Override
+    public ItemStack getOutput(DynamicRegistryManager registryManager) {
+        return null;
+    }
+
     public ItemStack getOutput() {
         return null;
     }

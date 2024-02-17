@@ -38,13 +38,13 @@ public class ModItems {
     // 锭、装甲、武器
     public static final Item GOLD_NETHERITE_INGOT = registerItem("gold_upgraded_netherite_ingot", new Item(new FabricItemSettings()));
     public static final Item GOLD_NETHERITE_HELMET = registerItem("gold_upgraded_netherite_helmet", new ArmorItem(ModArmorMeterial.GOLDERITE,
-            EquipmentSlot.HEAD, new FabricItemSettings()));
+            ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item GOLD_NETHERITE_CHESTPLATE = registerItem("gold_upgraded_netherite_chestplate", new ArmorItem(ModArmorMeterial.GOLDERITE,
-            EquipmentSlot.CHEST, new FabricItemSettings()));
+            ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item GOLD_NETHERITE_LEGGINGS = registerItem("gold_upgraded_netherite_leggings", new ArmorItem(ModArmorMeterial.GOLDERITE,
-            EquipmentSlot.LEGS, new FabricItemSettings()));
+            ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item GOLD_NETHERITE_BOOTS = registerItem("gold_upgraded_netherite_boots", new ArmorItem(ModArmorMeterial.GOLDERITE,
-            EquipmentSlot.FEET, new FabricItemSettings()));
+            ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item GOLD_NETHERITE_SWORD = registerItem("gold_upgraded_netherite_sword", new GolderiteSword(
             3, -2.4f, new FabricItemSettings()));
     public static final Item GOLD_NETHERITE_SHOVEL = registerItem("gold_upgraded_netherite_shovel", new GolderiteShovel(

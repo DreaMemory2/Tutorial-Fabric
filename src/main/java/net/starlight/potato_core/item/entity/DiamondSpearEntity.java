@@ -5,9 +5,11 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.damage.DamageType;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.hit.EntityHitResult;
@@ -53,7 +55,8 @@ public class DiamondSpearEntity extends PersistentProjectileEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         // if (worldObj.isRemote) return;
         Entity entity = entityHitResult.getEntity();
-        DamageSource damageSource = DamageSource.arrow(this, entity);
+        // DamageSource damageSource = DamageSource.arrow(this, entity);
+        DamageSource damageSource = new DamageSource(RegistryEntry.of(new DamageType("arrow", 0.1f)), this, entity);
         if (entity.damage(damageSource, /*thrownItem.getItem().getMeleeComponent().getEntityDamage() + */ getMeleeHitDamage(entity))) {
             onHit((LivingEntity) entity);
             getHitSound();

@@ -10,7 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.starlight.potato_core.FirstMod;
 import net.starlight.potato_core.block.CornCrop;
@@ -64,13 +63,13 @@ public class ModBlocks {
     public static final Block WHITE_PLANK_SLAB = registerBlock("white_plank_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)), ModItemGroup.BLOCKS);
     // 添加白色木板栅栏和白色木板栅栏门
     public static final Block WHITE_PLANK_FENCE = registerBlock("white_plank_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)), ModItemGroup.BLOCKS);
-    public static final Block WHITE_PLANK_FENCE_GATE = registerBlock("white_plank_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), SoundEvents.BLOCK_FENCE_GATE_CLOSE, SoundEvents.BLOCK_FENCE_GATE_OPEN), ModItemGroup.BLOCKS);
+    public static final Block WHITE_PLANK_FENCE_GATE = registerBlock("white_plank_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK), ModItemGroup.BLOCKS);
     // 添加白色木板门
-    public static final Block WHITE_PLANK_DOOR = registerBlock("white_plank_door", new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR), SoundEvents.BLOCK_WOODEN_DOOR_CLOSE, SoundEvents.BLOCK_WOODEN_DOOR_OPEN), ModItemGroup.BLOCKS);
-    public static final Block WHITE_PLANK_TRAPDOOR = registerBlock("white_plank_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR), SoundEvents.BLOCK_WOODEN_TRAPDOOR_CLOSE, SoundEvents.BLOCK_WOODEN_TRAPDOOR_OPEN), ModItemGroup.BLOCKS);
+    public static final Block WHITE_PLANK_DOOR = registerBlock("white_plank_door", new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR), BlockSetType.OAK), ModItemGroup.BLOCKS);
+    public static final Block WHITE_PLANK_TRAPDOOR = registerBlock("white_plank_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR), BlockSetType.OAK), ModItemGroup.BLOCKS);
     // 添加白色木板压力板和白色木板按钮
-    public static final Block WHITE_PLANK_PRESSURE_PLATE = registerBlock("white_plank_pressure_plate", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE), SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_OFF, SoundEvents.BLOCK_WOODEN_PRESSURE_PLATE_CLICK_ON), ModItemGroup.BLOCKS);
-    public static final Block WHITE_PLANK_BUTTON = registerBlock("white_plank_button", new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), 30, true, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_OFF, SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_ON), ModItemGroup.BLOCKS);
+    public static final Block WHITE_PLANK_PRESSURE_PLATE = registerBlock("white_plank_pressure_plate", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK), ModItemGroup.BLOCKS);
+    public static final Block WHITE_PLANK_BUTTON = registerBlock("white_plank_button", new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true), ModItemGroup.BLOCKS);
     /**
      * <p>饮料机，自定义方块信息界面，自定义配方</p>
      */

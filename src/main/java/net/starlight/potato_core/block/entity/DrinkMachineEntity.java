@@ -21,6 +21,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -150,7 +151,7 @@ public class DrinkMachineEntity extends BlockEntity implements SidedInventory, E
                 .getFirstMatch(DrinkMachineRecipe.Type.INSTANCE, inventory, entity.getWorld());
         // 全部满足三种情况，则合成表继续
         return mach.isPresent() && canInsertAmountIntOutputSlot(inventory)
-                && canInsertItemIntOutputSlot(inventory, mach.get().getOutput().getItem());
+                && canInsertItemIntOutputSlot(inventory, mach.get().getOutput(DynamicRegistryManager.EMPTY).getItem());
     }
 
     /**
@@ -190,7 +191,7 @@ public class DrinkMachineEntity extends BlockEntity implements SidedInventory, E
             entity.removeStack(1, 1);
             // 从合成表中json文件中读取配方
             // BUG出处
-            entity.setStack(2, new ItemStack(mach.get().getOutput().getItem(),
+            entity.setStack(2, new ItemStack(mach.get().getOutput(DynamicRegistryManager.EMPTY).getItem(),
                     entity.getStack(2).getCount() + 1));
             // 清除当前进度[归零0]
             entity.resetProgress();

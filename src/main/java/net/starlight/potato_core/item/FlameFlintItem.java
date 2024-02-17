@@ -75,7 +75,8 @@ public class FlameFlintItem extends Item {
         World world = context.getWorld();
         BlockPos pos = context.getBlockPos();
         PlayerEntity player = context.getPlayer();
-        Direction face = context.getPlayerFacing();
+        // Direction face = context.getPlayerFacing();
+        Direction face = context.getSide();
         int power = this.getPower(stack);
         if (power == 0) {
             return ActionResult.PASS;

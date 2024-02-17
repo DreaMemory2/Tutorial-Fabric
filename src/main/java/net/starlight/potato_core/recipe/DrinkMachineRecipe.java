@@ -6,6 +6,7 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.*;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
@@ -57,7 +58,7 @@ public class DrinkMachineRecipe implements Recipe<SimpleInventory> {
      * @return 合成之后的物品，输出物品
      */
     @Override
-    public ItemStack craft(SimpleInventory inventory) {
+    public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
         return this.output;
     }
 
@@ -66,11 +67,12 @@ public class DrinkMachineRecipe implements Recipe<SimpleInventory> {
         return true;
     }
 
+
     /**
      * <p>获取输出物品</p>
      */
     @Override
-    public ItemStack getOutput() {
+    public ItemStack getOutput(DynamicRegistryManager registryManager) {
         return output.copy();
     }
 
@@ -168,7 +170,7 @@ public class DrinkMachineRecipe implements Recipe<SimpleInventory> {
             for (Ingredient ingredient : recipe.getIngredients()) {
                 ingredient.write(buf);
             }
-            buf.writeItemStack(recipe.getOutput());
+            buf.writeItemStack(recipe.getOutput(DynamicRegistryManager.EMPTY));
         }
     }
 }
