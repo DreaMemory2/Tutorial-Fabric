@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
+import net.minecraft.test.TestContext;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -23,20 +24,20 @@ import java.util.List;
 @Test(Result.FAIL)
 public class FlameFlintRecipe implements Recipe<SimpleInventory> {
     private static final int BLOCK = 0;
-    public static final RecipeType<FlameFlintRecipe> TYPE = RecipeType.register("flame_flint");
+    private static final int FLUID = 1;
+    private static final int ITEM = 2;
     private boolean isCool;
-    @Nullable
     private Block inputBook;
-    @Nullable
     private Block outputBlock;
-    @Nullable
     private Fluid inputFluid;
-    @Nullable
     private Fluid onputFluid;
-    public World world;
-    public BlockPos pos;
     public List<ItemStack> droppedItems;
+    private TestContext world;
+    private BlockPos pos;
 
+    public FlameFlintRecipe(Identifier loc /*RecipeDef<EntropyRecipe> def */) {
+
+    }
 
     public boolean matches(boolean isCool, Block block, Fluid fluid) {
         return isCool == this.isCool && (inputBook == block || inputFluid == fluid);

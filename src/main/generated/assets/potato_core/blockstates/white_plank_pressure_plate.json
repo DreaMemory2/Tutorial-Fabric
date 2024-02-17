@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "potato_core:block/white_plank_pressure_plate"
+    },
+    "powered=true": {
+      "model": "potato_core:block/white_plank_pressure_plate_down"
+    }
+  }
+}

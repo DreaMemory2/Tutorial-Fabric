@@ -29,7 +29,7 @@ public class ModFluids {
         STILL_PARADISE_WATER = Registry.register(Registries.FLUID, new Identifier(FirstMod.MOD_ID, "paradise_water"), new ParadiseFluid.Still());
         FLOWING_PAREDISE_WATER = Registry.register(Registries.FLUID, new Identifier(FirstMod.MOD_ID, "flowing_paradise_water"), new ParadiseFluid.Flowing());
 
-        PAREDISE_WATER_BLOCK = Registry.register(Registries.BLOCK, new Identifier(FirstMod.MOD_ID, "paradise_water_block"), new FluidBlock(ModFluids.STILL_PARADISE_WATER, FabricBlockSettings.copyOf(Blocks.WATER)){ });
+        PAREDISE_WATER_BLOCK = Registry.register(Registries.BLOCK, new Identifier(FirstMod.MOD_ID, "paradise_water_block"), new FluidBlock(ModFluids.STILL_PARADISE_WATER, FabricBlockSettings.copyOf(Blocks.WATER)));
         PAREDISE_WATER_BUCKET = Registry.register(Registries.ITEM, new Identifier(FirstMod.MOD_ID, "paradise_water_bucket"), new BucketItem(ModFluids.STILL_PARADISE_WATER, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
 
         ItemGroupEvents.modifyEntriesEvent(ModItemGroup.ITEMS).register(entries -> entries.add(PAREDISE_WATER_BUCKET));

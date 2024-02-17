@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "potato_core:block/white_log",
+    "side": "potato_core:block/white_log"
+  }
+}

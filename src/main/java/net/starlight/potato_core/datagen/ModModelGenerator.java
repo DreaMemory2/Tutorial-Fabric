@@ -39,8 +39,26 @@ public class ModModelGenerator extends FabricModelProvider {
         block.registerTintableCross(ModBlocks.IRON_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         // 液体生成标签
         block.registerSimpleState(ModFluids.PAREDISE_WATER_BLOCK);
-        // 楼梯生成器
-        block.registerCubeAllModelTexturePool(ModBlocks.WHITE_PLANKS).stairs(ModBlocks.WHITE_PLANK_STAIRS);
+        // 原木、橡木生成器
+        block.registerLog(ModBlocks.WHITE_LOG)
+                .log(ModBlocks.WHITE_LOG)
+                .wood(ModBlocks.WHITE_WOOD);
+        // 去皮橡木、去皮原木生成器
+        block.registerLog(ModBlocks.STRIPPED_WHITE_LOG)
+                .log(ModBlocks.STRIPPED_WHITE_LOG)
+                .wood(ModBlocks.STRIPPED_WHITE_WOOD);
+        // 木板台阶、木板楼梯、木板栅栏、木板栅栏门生成器
+        block.registerCubeAllModelTexturePool(ModBlocks.WHITE_PLANKS)
+                .stairs(ModBlocks.WHITE_PLANK_STAIRS)
+                .slab(ModBlocks.WHITE_PLANK_SLAB)
+                .fence(ModBlocks.WHITE_PLANK_FENCE)
+                .fenceGate(ModBlocks.WHITE_PLANK_FENCE_GATE)
+                .button(ModBlocks.WHITE_PLANK_BUTTON)
+                .pressurePlate(ModBlocks.WHITE_PLANK_PRESSURE_PLATE);
+        // 白色木板门
+        block.registerDoor(ModBlocks.WHITE_PLANK_DOOR);
+        // 白色木板活把门
+        block.registerTrapdoor(ModBlocks.WHITE_PLANK_TRAPDOOR);
 
         // 自定义生成器
         // 草方块生成器，例如CrystalGrass
@@ -80,6 +98,7 @@ public class ModModelGenerator extends FabricModelProvider {
         item.register(ModItems.DATA_TABLET,Models.GENERATED);
         item.register(ModItems.APPLE_JUICE, Models.GENERATED);
         item.register(ModItems.CORN_SEEDS, Models.GENERATED);
+        item.register(ModItems.DIAMOND_SPEAR, Models.GENERATED);
     }
 
     /**

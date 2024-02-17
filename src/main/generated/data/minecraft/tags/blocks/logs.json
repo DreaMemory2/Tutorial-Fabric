@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "potato_core:iron_log"
+    "potato_core:iron_log",
+    "potato_core:white_log",
+    "potato_core:white_wood",
+    "potato_core:stripped_white_wood",
+    "potato_core:stripped_white_log"
   ]
 }

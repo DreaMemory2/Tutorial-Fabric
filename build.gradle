@@ -1,17 +1,13 @@
 plugins {
-	id 'fabric-loom' version '1.0-SNAPSHOT'
+	id 'fabric-loom' version '1.2-SNAPSHOT'
 	id 'maven-publish'
 }
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
-
-archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
 repositories {
-	maven {url = "https://maven.kyrptonaught.dev"}
+	maven { url = "https://maven.kyrptonaught.dev"}
 	maven { url "https://api.modrinth.com/maven" }
 }
 
@@ -24,10 +20,14 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta63-1.19.3'
-	include 'net.kyrptonaught:customportalapi:0.0.1-beta63-1.19.3'
+	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta63-1.19.4'
+	include 'net.kyrptonaught:customportalapi:0.0.1-beta63-1.19.4'
 
-	modImplementation('maven.modrinth:sodium:mc1.19.3-0.4.5') { exclude group: "net.fabricmc.fabric-api" }
+	modImplementation('maven.modrinth:sodium:mc1.19.4-0.4.10') { exclude group: "net.fabricmc.fabric-api" }
+}
+
+base {
+	archivesName = project.archives_base_name
 }
 
 processResources {
@@ -45,6 +45,9 @@ tasks.withType(JavaCompile).configureEach {
 
 java {
 	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
 }
 // 找到这个文件的 loom 部分，添加以下内容
 loom {
@@ -86,23 +89,17 @@ sourceSets {
 
 jar {
 	from("LICENSE") {
-		rename { "${it}_${project.archivesBaseName}"}
+		rename { "${it}_${base.archivesName.get()}"}
 	}
 }
 
-// configure the maven publication
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
 			from components.java
 		}
 	}
-
-	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
 	repositories {
-		// Add repositories to publish to here.
-		// Notice: This block does NOT have the same function as the block in the top level.
-		// The repositories here will be used for publishing your artifact, not for
-		// retrieving dependencies.
+
 	}
 }

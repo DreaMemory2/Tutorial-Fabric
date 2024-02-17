@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "potato_core:block/white_plank_slab"
+    },
+    "type=double": {
+      "model": "potato_core:block/white_planks"
+    },
+    "type=top": {
+      "model": "potato_core:block/white_plank_slab_top"
+    }
+  }
+}

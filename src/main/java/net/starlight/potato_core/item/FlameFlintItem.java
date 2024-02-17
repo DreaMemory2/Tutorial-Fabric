@@ -47,9 +47,17 @@ public class FlameFlintItem extends Item {
         return MathHelper.clamp((int) (filled * 13), 0, 13);
     }
 
+    private void extractPower(ItemStack stack) {
+        setPower(stack, getPower(stack) - 1);
+    }
+
+    private void setPower(ItemStack stack, int p) {
+        stack.getOrCreateNbt().putInt(CUR_POWER_NBT, p);
+    }
+
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
-        BlockHitResult result = Item.raycast(world, player, RaycastContext.FluidHandling.ANY);
+        BlockHitResult result = raycast(world, player, RaycastContext.FluidHandling.ANY);
         if (result.getType() != HitResult.Type.BLOCK) {
             return new TypedActionResult<>(ActionResult.FAIL, player.getStackInHand(hand));
         }
@@ -94,20 +102,11 @@ public class FlameFlintItem extends Item {
         return true;
     }
 
-
-    private void extractPower(ItemStack stack) {
-        setPower(stack, getPower(stack) - 1);
-    }
-
     private int getPower(ItemStack stack) {
         NbtCompound tag = stack.getNbt();
         if (tag != null) {
             return tag.getInt(CUR_POWER_NBT);
         }
         return MAX_POWER;
-    }
-
-    private void setPower(ItemStack stack, int p) {
-        stack.getOrCreateNbt().putInt(CUR_POWER_NBT, p);
     }
 }

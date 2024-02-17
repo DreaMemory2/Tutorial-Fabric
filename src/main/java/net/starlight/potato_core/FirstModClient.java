@@ -29,5 +29,8 @@ public class FirstModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.IRON_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MAPLE_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.IRON_SAPLING, RenderLayer.getCutout());
+        // 处理白色木板门和活板门渲染问题
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WHITE_PLANK_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WHITE_PLANK_TRAPDOOR, RenderLayer.getCutout());
     }
 }

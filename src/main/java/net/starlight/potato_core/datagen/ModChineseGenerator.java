@@ -2,7 +2,6 @@ package net.starlight.potato_core.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.starlight.potato_core.mod.Mod;
 import net.starlight.potato_core.register.*;
 
 public class ModChineseGenerator extends FabricLanguageProvider {
@@ -23,8 +22,6 @@ public class ModChineseGenerator extends FabricLanguageProvider {
         builder.add(ModBlocks.WOOL_7X, "7重压缩毛巾");
         builder.add(ModBlocks.WOOL_8X, "8重压缩毛巾");
         builder.add(ModBlocks.WOOL_9X, "§C9重压缩毛巾");
-        builder.add(ModBlocks.WHITE_PLANKS, "白色木板");
-        builder.add(ModBlocks.WHITE_PLANK_STAIRS, "白色木板楼梯");
         builder.add(ModBlocks.DRINK_MACHINE, "饮料制作机");
         builder.add(ModBlocks.APPLE_CAKE, "苹果蛋糕");
         builder.add(ModBlocks.CORN, "玉米种子");
@@ -33,6 +30,21 @@ public class ModChineseGenerator extends FabricLanguageProvider {
         builder.add(ModBlocks.IRON_SAPLING, "铁树苗");
         builder.add(ModBlocks.STONE, "生态石头");
         builder.add(ModBlocks.MAPLE_LEAVES, "枫树叶");
+        // 白色木头语言配置系列
+        builder.add(ModBlocks.WHITE_LOG, "白色原木");
+        builder.add(ModBlocks.WHITE_WOOD, "白色橡木");
+        builder.add(ModBlocks.STRIPPED_WHITE_LOG, "去皮白色原木");
+        builder.add(ModBlocks.STRIPPED_WHITE_WOOD, "去皮白色橡木");
+        // 白色木板语言配置系列
+        builder.add(ModBlocks.WHITE_PLANKS, "白色木板");
+        builder.add(ModBlocks.WHITE_PLANK_SLAB, "白色木板台阶");
+        builder.add(ModBlocks.WHITE_PLANK_STAIRS, "白色木板楼梯");
+        builder.add(ModBlocks.WHITE_PLANK_FENCE, "白色木板栅栏");
+        builder.add(ModBlocks.WHITE_PLANK_FENCE_GATE, "白色木板栅栏门");
+        builder.add(ModBlocks.WHITE_PLANK_DOOR, "白色木板门");
+        builder.add(ModBlocks.WHITE_PLANK_TRAPDOOR, "白色木板活板门");
+        builder.add(ModBlocks.WHITE_PLANK_PRESSURE_PLATE, "白色木板压力板");
+        builder.add(ModBlocks.WHITE_PLANK_BUTTON, "白色木板按钮");
 
         // 物品语言配置
         builder.add(ModItems.CHICKEN_SOUP, "鸡汤");

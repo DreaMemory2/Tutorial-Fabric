@@ -77,6 +77,8 @@ public class ModItems {
     public static final Item DIAMOND_SHOVEL = registerOtherItem("diamond_shovel", new DiamondShovelItem());
     // 幸运药水
     public static final Item LUCKY_POTION = registerItem("lucky_potion", new LuckyPotionItem());
+    // 自定义钻石矛
+    public static final Item DIAMOND_SPEAR = registerItem("diamond_spear", new DiamondSpearItem());
 
     private static Item registerItem(String name, Item item) {
         ItemGroupEvents.modifyEntriesEvent(ModItemGroup.ITEMS).register(entries -> entries.add(item));
