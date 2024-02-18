@@ -1,7 +1,6 @@
 package net.starlight.potato_core;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.starlight.potato_core.mod.ModManager;
 import net.starlight.potato_core.register.ModBlocks;
 import net.starlight.potato_core.register.*;
@@ -50,9 +49,8 @@ public class FirstMod implements ModInitializer {
 		ModVillagers.registerTrades();
 		/* 生成器注册入口 */
 		ModGeneration.registerGeneration();
-
 		/* 注册实体 */
-		// FabricDefaultAttributeRegistry.register(ModEntities.SPEAR_ENTITY);
+		ModEntities.registerEntity();
 	}
 
 	/**

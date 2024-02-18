@@ -19,6 +19,6 @@ public class ModBlockEntities {
                 FabricBlockEntityTypeBuilder.create(DrinkMachineEntity::new, ModBlocks.DRINK_MACHINE).build(null));
 
         // 流体储存功能绑定到饮料制作机上，流体储存功能登记
-        FluidStorage.SIDED.registerForBlockEntities((blockEntity, direction) -> ((DrinkMachineEntity)blockEntity).fluidStorage, DRINK_MACHINE_ENTITY);
+        FluidStorage.SIDED.registerForBlockEntities((blockEntity, direction) -> ((DrinkMachineEntity) blockEntity).fluidStorage, DRINK_MACHINE_ENTITY);
     }
 }

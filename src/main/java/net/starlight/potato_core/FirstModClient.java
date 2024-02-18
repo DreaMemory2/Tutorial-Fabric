@@ -4,10 +4,13 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
+import net.starlight.potato_core.entity.render.DiamondSpearRenderer;
 import net.starlight.potato_core.register.ModBlocks;
+import net.starlight.potato_core.register.ModEntities;
 import net.starlight.potato_core.register.ModFluids;
 import net.starlight.potato_core.register.ModScreenHandlers;
 import net.starlight.potato_core.screen.DrinkMachineScreen;
@@ -32,5 +35,7 @@ public class FirstModClient implements ClientModInitializer {
         // 处理白色木板门和活板门渲染问题
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WHITE_PLANK_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WHITE_PLANK_TRAPDOOR, RenderLayer.getCutout());
+        // 注册钻石矛的实体渲染问题
+        EntityRendererRegistry.register(ModEntities.DIAMOND_SPEAR_ENTITY, DiamondSpearRenderer::new);
     }
 }

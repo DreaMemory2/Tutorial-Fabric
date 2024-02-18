@@ -63,7 +63,7 @@ public abstract class InfiniteItemMixin extends Entity {
      */
     @Overwrite
     private boolean tryUseTotem(DamageSource source) {
-        if (source.isOutOfWorld()) return false;
+        if (source.isIndirect()) return false;
         else {
             ItemStack stack = null;
             Hand[] var4 = Hand.values();

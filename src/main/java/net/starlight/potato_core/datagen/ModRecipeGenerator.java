@@ -3,7 +3,7 @@ package net.starlight.potato_core.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
-import net.minecraft.data.server.recipe.SmithingRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.SmithingTrimRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -20,29 +20,44 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
-        generateNetheriteToolAndArmors(exporter, Items.DIAMOND_SWORD, ModItems.GOLD_NETHERITE_INGOT, ModItems.GOLD_NETHERITE_SWORD, RecipeCategory.TOOLS, "gold_netherite_sword");
-        generateNetheriteToolAndArmors(exporter, Items.DIAMOND_PICKAXE, ModItems.GOLD_NETHERITE_INGOT, ModItems.GOLD_NETHERITE_PICKAXE, RecipeCategory.TOOLS, "gold_netherite_pickaxe");
-        generateNetheriteToolAndArmors(exporter, Items.DIAMOND_AXE, ModItems.GOLD_NETHERITE_INGOT, ModItems.GOLD_NETHERITE_AXE, RecipeCategory.TOOLS, "gold_netherite_axe");
-        generateNetheriteToolAndArmors(exporter, Items.DIAMOND_SHOVEL, ModItems.GOLD_NETHERITE_INGOT, ModItems.GOLD_NETHERITE_SHOVEL, RecipeCategory.TOOLS, "gold_netherite_shovel");
-        generateNetheriteToolAndArmors(exporter, Items.DIAMOND_HOE, ModItems.GOLD_NETHERITE_INGOT, ModItems.GOLD_NETHERITE_HOE, RecipeCategory.TOOLS, "gold_netherite_hoe");
-
-        generateNetheriteToolAndArmors(exporter, Items.DIAMOND_HELMET, ModItems.GOLD_NETHERITE_INGOT, ModItems.GOLD_NETHERITE_HELMET, RecipeCategory.TOOLS, "gold_netherite_helmet");
-        generateNetheriteToolAndArmors(exporter, Items.DIAMOND_CHESTPLATE, ModItems.GOLD_NETHERITE_INGOT, ModItems.GOLD_NETHERITE_CHESTPLATE, RecipeCategory.TOOLS, "gold_netherite_chestplate");
-        generateNetheriteToolAndArmors(exporter, Items.DIAMOND_LEGGINGS, ModItems.GOLD_NETHERITE_INGOT, ModItems.GOLD_NETHERITE_LEGGINGS, RecipeCategory.TOOLS, "gold_netherite_leggings");
-        generateNetheriteToolAndArmors(exporter, Items.DIAMOND_BOOTS, ModItems.GOLD_NETHERITE_INGOT, ModItems.GOLD_NETHERITE_BOOTS, RecipeCategory.TOOLS, "gold_netherite_boots");
+        generateNetheriteToolAndArmors(exporter, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.DIAMOND_SWORD, ModItems.GOLD_NETHERITE_INGOT, RecipeCategory.TOOLS, "gold_netherite_sword");
+        generateNetheriteToolAndArmors(exporter, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.DIAMOND_PICKAXE, ModItems.GOLD_NETHERITE_INGOT, RecipeCategory.TOOLS, "gold_netherite_pickaxe");
+        generateNetheriteToolAndArmors(exporter, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.DIAMOND_AXE, ModItems.GOLD_NETHERITE_INGOT, RecipeCategory.TOOLS, "gold_netherite_axe");
+        generateNetheriteToolAndArmors(exporter, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.DIAMOND_SHOVEL, ModItems.GOLD_NETHERITE_INGOT, RecipeCategory.TOOLS, "gold_netherite_shovel");
+        generateNetheriteToolAndArmors(exporter, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.DIAMOND_HOE, ModItems.GOLD_NETHERITE_INGOT, RecipeCategory.TOOLS, "gold_netherite_hoe");
+        generateNetheriteToolAndArmors(exporter, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.DIAMOND_HELMET, ModItems.GOLD_NETHERITE_INGOT, RecipeCategory.TOOLS, "gold_netherite_helmet");
+        generateNetheriteToolAndArmors(exporter, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.DIAMOND_CHESTPLATE, ModItems.GOLD_NETHERITE_INGOT, RecipeCategory.TOOLS, "gold_netherite_chestplate");
+        generateNetheriteToolAndArmors(exporter, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.DIAMOND_LEGGINGS, ModItems.GOLD_NETHERITE_INGOT, RecipeCategory.TOOLS, "gold_netherite_leggings");
+        generateNetheriteToolAndArmors(exporter, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.DIAMOND_BOOTS, ModItems.GOLD_NETHERITE_INGOT, RecipeCategory.TOOLS, "gold_netherite_boots");
     }
 
-    public void generateNetheriteToolAndArmors(Consumer<RecipeJsonProvider> exporter, Item base, Item addition, Item result, RecipeCategory category, String recipeName) {
-        SmithingRecipeJsonBuilder.create(
-                // 需要升级的武器
-                Ingredient.ofStacks(new ItemStack(base)),
+    /**
+     * <p>1.19.3 动态配方合成表</p>
+     * <pre><code>
+     *     SmithingRecipeJsonProvide.create(
+     *                 // 需要升级的武器
+     *                 Ingredient.ofStacks(new ItemStack(base)),
+     *                 // 原材料
+     *                 Ingredient.ofStacks(new ItemStack(addition)),
+     *                 // 配方类包
+     *                 category,
+     *                 // 升级后的武器
+     *                 result
+     *                 ).criterion(FabricRecipeProvider.hasItem(addition), FabricRecipeProvider.conditionsFromItem(addition))
+     *                 .offerTo(exporter, recipeName);
+     * </code></pre>
+     */
+    public void generateNetheriteToolAndArmors(Consumer<RecipeJsonProvider> exporter, Item template, Item base, Item addition, RecipeCategory category, String recipeName) {
+        // 1.19.4 动态配方合成表
+        SmithingTrimRecipeJsonBuilder.create(
+                // 锻造模板
+                Ingredient.ofStacks(new ItemStack(template)),
                 // 原材料
-                Ingredient.ofStacks(new ItemStack(addition)),
+                Ingredient.ofStacks(new ItemStack(base)),
                 // 配方类包
-                category,
-                // 升级后的武器
-                result
-                ).criterion(FabricRecipeProvider.hasItem(addition), FabricRecipeProvider.conditionsFromItem(addition))
-                .offerTo(exporter, recipeName);
+                Ingredient.ofStacks(new ItemStack(addition)),
+                category
+        ).criterion(FabricRecipeProvider.hasItem(addition),
+                        FabricRecipeProvider.conditionsFromItem(addition)).offerTo(exporter, recipeName);
     }
 }

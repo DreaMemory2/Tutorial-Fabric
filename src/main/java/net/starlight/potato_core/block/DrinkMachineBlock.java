@@ -36,7 +36,8 @@ public class DrinkMachineBlock extends BlockWithEntity implements BlockEntityPro
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
+        // return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite()); // 1.19.3
+        return this.getDefaultState().with(FACING, ctx.getSide().getOpposite());
     }
 
     /**

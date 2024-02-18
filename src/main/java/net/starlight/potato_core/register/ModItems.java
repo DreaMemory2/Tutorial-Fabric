@@ -67,10 +67,10 @@ public class ModItems {
     /** 定位器，用来获取方块信息 */
     public static final Item DOWSING_ROD = registerItem("dowsing_rod", new DowsingRodItem(new FabricItemSettings().maxCount(1)));
     /** 1:1，还原幸运村民的交易 */
-    public static final Item DIAMOND_HELMET = registerOtherItem("diamond_helmet", new DiamondArmorItem(EquipmentSlot.HEAD));
-    public static final Item DIAMOND_CHESTPLATE = registerOtherItem("diamond_chestplate", new DiamondArmorItem(EquipmentSlot.CHEST));
-    public static final Item DIAMOND_LEGGINGS = registerOtherItem("diamond_leggings", new DiamondArmorItem(EquipmentSlot.LEGS));
-    public static final Item DIAMOND_BOOTS = registerOtherItem("diamond_boots", new DiamondArmorItem(EquipmentSlot.FEET));
+    public static final Item DIAMOND_HELMET = registerOtherItem("diamond_helmet", new DiamondArmorItem(ArmorItem.Type.HELMET));
+    public static final Item DIAMOND_CHESTPLATE = registerOtherItem("diamond_chestplate", new DiamondArmorItem(ArmorItem.Type.CHESTPLATE));
+    public static final Item DIAMOND_LEGGINGS = registerOtherItem("diamond_leggings", new DiamondArmorItem(ArmorItem.Type.LEGGINGS));
+    public static final Item DIAMOND_BOOTS = registerOtherItem("diamond_boots", new DiamondArmorItem(ArmorItem.Type.BOOTS));
     public static final Item DIAMOND_SWORD = registerOtherItem("diamond_sword", new DiamondSwordItem());
     public static final Item DIAMOND_PICKAXE = registerOtherItem("diamond_pickaxe", new DiamondPickaxeItem());
     public static final Item DIAMOND_AXE = registerOtherItem("diamond_axe", new DiamondAxeItem());
@@ -78,7 +78,7 @@ public class ModItems {
     // 幸运药水
     public static final Item LUCKY_POTION = registerItem("lucky_potion", new LuckyPotionItem());
     // 自定义钻石矛
-    public static final Item DIAMOND_SPEAR = registerItem("diamond_spear", new DiamondSpearItem());
+    public static final Item DIAMOND_SPEAR = registerItem("diamond_spear", new DiamondSpearItem(7.0f, 1.1f));
 
     private static Item registerItem(String name, Item item) {
         ItemGroupEvents.modifyEntriesEvent(ModItemGroup.ITEMS).register(entries -> entries.add(item));

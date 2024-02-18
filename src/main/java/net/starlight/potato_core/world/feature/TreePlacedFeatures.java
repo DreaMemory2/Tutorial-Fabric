@@ -39,7 +39,7 @@ public class TreePlacedFeatures {
         PlacedFeatures.register(featureRegisterable, FANCY_IRON_BEES, fancy_iron_bees, PlacedFeatures.wouldSurvive(ModBlocks.IRON_SAPLING));
         // 在区块上生成树、数量、额外的概率，格外的数量
         PlacedFeatures.register(featureRegisterable, MAPLE_TREE, maple_tree,
-                VegetationPlacedFeatures.modifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1F, 2), Blocks.OAK_SAPLING));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1F, 2), Blocks.OAK_SAPLING));
 
     }
 }

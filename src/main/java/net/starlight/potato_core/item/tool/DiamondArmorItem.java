@@ -19,8 +19,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class DiamondArmorItem extends ArmorItem {
-    public DiamondArmorItem(EquipmentSlot slot) {
-        super(ModArmorMeterial.DIAMOND, slot, new Settings());
+    public DiamondArmorItem(Type type) {
+        super(ModArmorMeterial.DIAMOND, type, new Settings());
     }
 
     @Override
